@@ -1,0 +1,185 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Navigation Bar */
+nav {
+    background: linear-gradient(90deg, #004d4d, #006a93); /* Smooth gradient */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded hover */
+    font-size: 1.1em; /* Slightly larger font */
+    font-family: 'Montserrat', sans-serif; /* Modern font */
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9); /* Mobile dropdown background */
+        width: 200px;
+        display: none; /* Hidden by default */
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+        color: white;
+        font-size: 2em;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+}
+
+/* Hamburger menu for mobile */
+.hamburger-menu {
+    display: none; /* Hidden on larger screens */
+}
+
+/* Hero Section */
+.how-it-works-hero {
+    background: url('how-it-works-hero.jpg') no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+}
+
+/* Step-by-Step Timeline Table */
+.process-timeline {
+    padding: 30px;
+    background-color: #e0f7fa;
+    text-align: center;
+}
+
+.process-timeline h2 {
+    font-size: 2em;
+    color: #008cba;
+    margin-bottom: 20px;
+}
+
+.timeline-table {
+    width: 100%;
+    text-align: center;
+    table-layout: fixed;
+/*    border-collapse: collapse;*/
+    border-spacing: 10px;
+}
+
+.timeline-step {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    width: 20%; /* Each step takes up 20% of the table width */
+}
+
+.timeline-step img {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 10px;
+}
+
+.timeline-step h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #008cba;
+}
+
+.timeline-step p {
+    font-size: 0.85em;
+    color: #333;
+}
+
+.timeline-step:hover {
+    transform: translateY(-5px);
+}
+
+/* Call to Action Section */
+.cta-section {
+    background-color: #e0f7fa;
+    padding: 40px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2em;
+    color: #008cba;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    background-color: #008cba;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #006a93;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
