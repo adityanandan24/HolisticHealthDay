@@ -5,11 +5,11 @@ body, html {
     background-color: #f8f8f8;
 }
 
-/* Navigation Bar */
+/* Base Navigation Styles */
 nav {
-    background: linear-gradient(90deg, #004d4d, #006a93); /* Smooth gradient */
+    background: linear-gradient(90deg, #004d4d, #006a93);
     padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
@@ -32,26 +32,37 @@ nav {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
-    border-radius: 20px; /* Rounded hover */
-    font-size: 1.1em; /* Slightly larger font */
-    font-family: 'Montserrat', sans-serif; /* Modern font */
+    border-radius: 20px;
+    font-size: 1.1em;
+    font-family: 'Montserrat', sans-serif;
     transition: background-color 0.3s ease;
 }
 
 .navbar a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive Design for Mobile */
+/* Hamburger Menu for Mobile (Initially Hidden on Larger Screens) */
+.hamburger-menu {
+    display: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+/* Mobile Menu */
 @media (max-width: 768px) {
     .navbar {
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 60px;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.9); /* Mobile dropdown background */
+        background-color: rgba(0, 0, 0, 0.9); /* Dark background for mobile dropdown */
         width: 200px;
-        display: none; /* Hidden by default */
     }
 
     .navbar.active {
@@ -63,19 +74,8 @@ nav {
     }
 
     .hamburger-menu {
-        display: block;
-        color: white;
-        font-size: 2em;
-        cursor: pointer;
-        position: absolute;
-        right: 20px;
-        top: 15px;
+        display: block; /* Show hamburger menu on mobile screens */
     }
-}
-
-/* Hamburger menu for mobile */
-.hamburger-menu {
-    display: none; /* Hidden on larger screens */
 }
 
 /* Hero Section */
