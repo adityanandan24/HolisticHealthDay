@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Wellness Assessment</title>
+    <link rel="stylesheet" href="../styles/calculators.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <span class="hamburger-menu">&#9776;</span>
+        <ul class="navbar">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../our-approach.html">Our Approach</a></li>
+            <li><a href="../how-it-works.html">How It Works</a></li>
+            <li><a href="../calculators.html">Calculators</a></li>
+            <li><a href="../articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+	<!-- Hero Section -->
+    <div class="hero">
+		<br>
+        <h1>Environmental Wellness Assessment</h1>
+        <p>Evaluate your living or workspace to optimize your well-being by answering the questions below</p>
+    </div>
+	
+    <div class="content-wrapper">
+		<aside class="sidebar">
+            <h3>Calculators</h3>
+            <ul>
+                <li><a href="bmr.html">BMR & TDEE Calculator</a></li>
+                <li><a href="hrv.html">Heart Rate Variability (HRV) Assessment</a></li>
+                <li><a href="ada.html">Ayurvedic Dosha Assessment</a></li>
+                <li><a href="stress.html">Stress Level & Mental Wellness Check</a></li>
+                <li><a href="nutrition.html">Nutrition Deficiency Checker</a></li>
+                <li><a href="lung.html">Lung Capacity & Breath Control Assessment</a></li>
+                <li><a href="mindful-eating.html">Mindful Eating Quiz</a></li>
+                <li><a href="posture.html">Posture Assessment</a></li>
+                <li><a href="gut.html">Gut Health Assessment</a></li>
+				<li><a href="enviroment.html">Environmental Wellness Assessment</a></li>
+            </ul>
+        </aside>
+		
+		<div  class="main-content">
+			<!-- Introduction -->
+			<h2>How Environment Affects Your Wellness</h2>
+            <p>
+                The environment you live and work in plays a significant role in your overall well-being. 
+                Factors like air quality, natural lighting, and ergonomics can greatly impact your health. 
+                Take this assessment to identify areas for improvement.
+            </p>
+
+			<!-- Assessment Form -->
+			<form id="environmentForm">
+				<!-- Temperature & Humidity -->
+				<fieldset>
+					<legend>Temperature & Humidity</legend>
+					<label>Is your living space temperature comfortable year-round?</label>
+					<select name="temperature">
+						<option value="">Select</option>
+						<option value="comfortable">Comfortable</option>
+						<option value="variable">Variable</option>
+						<option value="uncomfortable">Uncomfortable</option>
+					</select><br>
+
+					<label>Do you use a humidifier or dehumidifier as needed?</label>
+					<select name="humidityControl">
+						<option value="">Select</option>
+						<option value="yes">Yes</option>
+						<option value="no">No</option>
+					</select>
+				</fieldset>
+
+				<!-- Cleanliness & Clutter -->
+				<fieldset>
+					<legend>Cleanliness & Clutter</legend>
+					<label>Do you regularly clean and declutter your living space?</label>
+					<select name="cleanliness">
+						<option value="">Select</option>
+						<option value="regularly">Regularly</option>
+						<option value="occasionally">Occasionally</option>
+						<option value="rarely">Rarely</option>
+					</select><br>
+
+					<label>How cluttered is your workspace?</label>
+					<select name="workspaceClutter">
+						<option value="">Select</option>
+						<option value="minimal">Minimal</option>
+						<option value="moderate">Moderate</option>
+						<option value="excessive">Excessive</option>
+					</select>
+				</fieldset>
+
+				<!-- Greenery & Indoor Plants -->
+				<fieldset>
+					<legend>Greenery & Indoor Plants</legend>
+					<label>Do you have indoor plants?</label>
+					<select name="indoorPlants">
+						<option value="">Select</option>
+						<option value="yes">Yes</option>
+						<option value="no">No</option>
+					</select><br>
+
+					<label>How often do you spend time in green outdoor spaces?</label>
+					<select name="outdoorGreen">
+						<option value="">Select</option>
+						<option value="daily">Daily</option>
+						<option value="weekly">Weekly</option>
+						<option value="rarely">Rarely</option>
+					</select>
+				</fieldset>
+
+				<!-- Electromagnetic Radiation & Digital Devices -->
+				<fieldset>
+					<legend>Electromagnetic Radiation & Digital Devices</legend>
+					<label>Do you minimize screen time before bed?</label>
+					<select name="screenTime">
+						<option value="">Select</option>
+						<option value="always">Always</option>
+						<option value="sometimes">Sometimes</option>
+						<option value="never">Never</option>
+					</select><br>
+
+					<label>Do you use protective devices for electromagnetic radiation?</label>
+					<select name="emfProtection">
+						<option value="">Select</option>
+						<option value="yes">Yes</option>
+						<option value="no">No</option>
+					</select>
+				</fieldset>
+
+				<!-- Water Quality & Hydration -->
+				<fieldset>
+					<legend>Water Quality & Hydration</legend>
+					<label>Do you drink filtered or purified water?</label>
+					<select name="filteredWater">
+						<option value="">Select</option>
+						<option value="always">Always</option>
+						<option value="sometimes">Sometimes</option>
+						<option value="never">Never</option>
+					</select><br>
+
+					<label>How many glasses of water do you drink daily?</label>
+					<select name="waterIntake">
+						<option value="">Select</option>
+						<option value="8+">8+</option>
+						<option value="5-7">5-7</option>
+						<option value="less than 5">Less than 5</option>
+					</select>
+				</fieldset>
+
+				<!-- Community & Social Environment -->
+				<fieldset>
+					<legend>Community & Social Environment</legend>
+					<label>How often do you interact with neighbors or community members?</label>
+					<select name="communityInteraction">
+						<option value="">Select</option>
+						<option value="frequently">Frequently</option>
+						<option value="occasionally">Occasionally</option>
+						<option value="rarely">Rarely</option>
+					</select><br>
+
+					<label>Do you feel safe in your neighborhood?</label>
+					<select name="neighborhoodSafety">
+						<option value="">Select</option>
+						<option value="yes">Yes</option>
+						<option value="no">No</option>
+					</select>
+				</fieldset>
+
+				<button type="button" onclick="calculateWellness()">Get Your Score</button>
+			</form>
+			<!-- Results Section -->
+			<div id="results" class="result"></div>
+		</div>
+    </div>
+
+	<footer>
+        <p>&copy; 2024 Sahaja Swasthaya. All Rights Reserved.</p>
+    </footer>
+	
+    <script>
+		function calculateWellness() {
+			// Get user inputs
+			let temperature = document.querySelector('select[name="temperature"]').value;
+			let humidityControl = document.querySelector('select[name="humidityControl"]').value;
+			let cleanliness = document.querySelector('select[name="cleanliness"]').value;
+			let workspaceClutter = document.querySelector('select[name="workspaceClutter"]').value;
+			let indoorPlants = document.querySelector('select[name="indoorPlants"]').value;
+			let outdoorGreen = document.querySelector('select[name="outdoorGreen"]').value;
+			let screenTime = document.querySelector('select[name="screenTime"]').value;
+			let emfProtection = document.querySelector('select[name="emfProtection"]').value;
+			let filteredWater = document.querySelector('select[name="filteredWater"]').value;
+			let waterIntake = document.querySelector('select[name="waterIntake"]').value;
+			let communityInteraction = document.querySelector('select[name="communityInteraction"]').value;
+			let neighborhoodSafety = document.querySelector('select[name="neighborhoodSafety"]').value;
+
+			let score = 0;
+
+			// Calculate score
+			score += (temperature === "comfortable") ? 10 : 5;
+			score += (humidityControl === "yes") ? 10 : 5;
+			score += (cleanliness === "regularly") ? 10 : 5;
+			score += (workspaceClutter === "minimal") ? 10 : 5;
+			score += (indoorPlants === "yes") ? 10 : 5;
+			score += (outdoorGreen === "daily") ? 10 : 5;
+			score += (screenTime === "always") ? 10 : 5;
+			score += (emfProtection === "yes") ? 10 : 5;
+			score += (filteredWater === "always") ? 10 : 5;
+			score += (waterIntake === "8+") ? 10 : 5;
+			score += (communityInteraction === "frequently") ? 10 : 5;
+			score += (neighborhoodSafety === "yes") ? 10 : 5;
+
+			// Display results
+			let message = (score >= 90) ? "Your environment is optimized for wellness!" : 
+						  (score >= 70) ? "Good environment, but there's room for improvement." : 
+						  "Consider making significant changes to enhance your wellness.";
+			
+			document.getElementById("results").innerHTML = `
+				<h2>Your Environmental Wellness Score: ${score}</h2>
+				<p>${message}</p>
+			`;
+		}
+
+	</script>
+</body>
+</html>
