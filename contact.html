@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sahaja Swasthaya</title>
+    <link rel="stylesheet" href="styles/contact-styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <span class="hamburger-menu">&#9776;</span>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="our-approach.html">Our Approach</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="calculators.html">Calculators</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Page Hero -->
+    <header class="contact-hero">
+        <div class="hero-content">
+            <h1>Contact Us</h1>
+            <p>We’d love to hear from you. Reach out to us for any inquiries or assistance.</p>
+        </div>
+    </header>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info">
+        <div class="info-item">
+            <img src="images/icon-phone.png" alt="Phone Icon">
+            <h3>Phone</h3>
+            <p>+91-9876543210</p>
+        </div>
+
+        <div class="info-item">
+            <img src="images/icon-email.png" alt="Email Icon">
+            <h3>Email</h3>
+            <p>info@sahajaswasthaya.com</p>
+        </div>
+
+        <div class="info-item">
+            <img src="images/icon-location.png" alt="Location Icon">
+            <h3>Address</h3>
+            <p>123 Wellness St, Bangalore, India</p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <h2>Send Us a Message</h2>
+        <form class="contact-form">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <h2>Need Immediate Assistance?</h2>
+        <p>Call us at +91-9876543210 or visit our office at the address above for quick help.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Sahaja Swasthaya. All Rights Reserved.</p>
+    </footer>
+<script>
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navbar = document.querySelector('.navbar');
+
+    hamburger.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
