@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Capacity & Breath Control Assessment</title>
+    <link rel="stylesheet" href="../styles/calculators.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <span class="hamburger-menu">&#9776;</span>
+        <ul class="navbar">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../our-approach.html">Our Approach</a></li>
+            <li><a href="../how-it-works.html">How It Works</a></li>
+            <li><a href="../calculators.html">Calculators</a></li>
+            <li><a href="../articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Lung Capacity & Breath Control Assessment</h1>
+        <p>Assess your lung efficiency and optimize your breathing techniques</p>
+    </div>
+
+    <div class="content-wrapper">
+        <!-- Sidebar for Related Calculators -->
+        <aside class="sidebar">
+            <h3>Explore More Calculators</h3>
+            <ul>
+                <li><a href="bmr.html">BMR & TDEE Calculator</a></li>
+                <li><a href="hrv.html">Heart Rate Variability (HRV) Assessment</a></li>
+                <li><a href="ada.html">Ayurvedic Dosha Assessment</a></li>
+                <li><a href="stress.html">Stress Level & Mental Wellness Check</a></li>
+                <li><a href="nutrition.html">Nutrition Deficiency Checker</a></li>
+                <li><a href="lung.html">Lung Capacity & Breath Control Assessment</a></li>
+                <li><a href="mindful-eating.html">Mindful Eating Quiz</a></li>
+                <li><a href="posture.html">Posture Assessment</a></li>
+                <li><a href="gut.html">Gut Health Assessment</a></li>
+				<li><a href="enviroment.html">Environmental Wellness Assessment</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <h2>About Lung Capacity</h2>
+            <p>Lung capacity refers to the total amount of air your lungs can hold. This assessment helps you evaluate your lung health and provides personalized tips for improvement.</p>
+            
+            <!-- Assessment Form -->
+            <form id="lungCapacityForm">
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="10" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <h3>Breath Quality & Techniques</h3>
+                <div class="form-group">
+                    <label>Do you experience difficulty breathing during physical activity?</label>
+                    <select id="breathDifficulty" required>
+                        <option value="">Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>How long can you comfortably hold your breath after a full inhalation? (in seconds)</label>
+                    <input type="number" id="breathHold" min="1" required>
+                </div>
+
+                <h3>Lifestyle & Environment</h3>
+                <div class="form-group">
+                    <label>Do you live in an area with high air pollution?</label>
+                    <select id="pollutionExposure" required>
+                        <option value="">Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>How would you rate your stress levels? (1 to 10)</label>
+                    <input type="number" id="stressLevel" min="1" max="10" required>
+                </div>
+
+                <h3>Physical Activity & Exercise</h3>
+                <div class="form-group">
+                    <label>How often do you engage in cardiovascular exercise?</label>
+                    <select id="exerciseFrequency" required>
+                        <option value="">Select</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="occasionally">Occasionally</option>
+                        <option value="never">Never</option>
+                    </select>
+                </div>
+
+                <button type="button" onclick="calculateLungCapacity()">Calculate</button>
+            </form>
+
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+	function calculateLungCapacity() {
+		const age = parseInt(document.getElementById("age").value);
+		const gender = document.getElementById("gender").value;
+		const breathHold = parseInt(document.getElementById("breathHold").value);
+		const breathDifficulty = document.getElementById("breathDifficulty").value;
+		const pollutionExposure = document.getElementById("pollutionExposure").value;
+		const stressLevel = parseInt(document.getElementById("stressLevel").value);
+		const exerciseFrequency = document.getElementById("exerciseFrequency").value;
+
+		if (!age || !gender || !breathHold || !breathDifficulty || !pollutionExposure || !stressLevel || !exerciseFrequency) {
+			alert("Please fill in all fields.");
+			return;
+		}
+
+		// Calculate the lung capacity score
+		let score = breathHold * 1.5;
+		score += exerciseFrequency === "daily" ? 10 : exerciseFrequency === "weekly" ? 5 : 0;
+		score -= (pollutionExposure === "yes" ? 5 : 0);
+		score -= (breathDifficulty === "yes" ? 5 : 0);
+		score -= stressLevel > 7 ? 5 : 0;
+
+		// Generate recommendations
+		let message;
+		if (score > 30) {
+			message = "Excellent lung capacity! Keep practicing breathing exercises to maintain it.";
+		} else if (score > 20) {
+			message = "Good lung capacity. Try to incorporate more cardio and deep breathing exercises.";
+		} else {
+			message = "Low lung capacity. Focus on improving your breath control and reduce stress.";
+		}
+
+		document.getElementById("result").textContent = message;
+	}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Eating Quiz</title>
+    <link rel="stylesheet" href="../styles/calculators.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <span class="hamburger-menu">&#9776;</span>
+        <ul class="navbar">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../our-approach.html">Our Approach</a></li>
+            <li><a href="../how-it-works.html">How It Works</a></li>
+            <li><a href="../calculators.html">Calculators</a></li>
+            <li><a href="../articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Mindful Eating Quiz</h1>
+        <p>Assess your eating habits and improve your relationship with food</p>
+    </div>
+
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <h3>Related Calculators</h3>
+            <ul>
+                <li><a href="bmr.html">BMR & TDEE Calculator</a></li>
+                <li><a href="hrv.html">Heart Rate Variability (HRV) Assessment</a></li>
+                <li><a href="ada.html">Ayurvedic Dosha Assessment</a></li>
+                <li><a href="stress.html">Stress Level & Mental Wellness Check</a></li>
+                <li><a href="nutrition.html">Nutrition Deficiency Checker</a></li>
+                <li><a href="lung.html">Lung Capacity & Breath Control Assessment</a></li>
+                <li><a href="mindful-eating.html">Mindful Eating Quiz</a></li>
+                <li><a href="posture.html">Posture Assessment</a></li>
+                <li><a href="gut.html">Gut Health Assessment</a></li>
+				<li><a href="enviroment.html">Environmental Wellness Assessment</a></li>
+            </ul>
+        </aside>
+
+        <div class="main-content">
+            <form id="mindfulEatingForm">
+                <h2>Personal Information</h2>
+                <label for="age">Age:</label>
+                <input type="number" id="age" required><br>
+
+                <label for="eatingEnvironment">Do you eat in a calm environment?</label>
+                <select id="eatingEnvironment" required>
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br>
+
+                <label for="eatingSpeed">How quickly do you eat?</label>
+                <select id="eatingSpeed" required>
+                    <option value="">Select</option>
+                    <option value="fast">Fast</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="slow">Slow</option>
+                </select><br>
+
+                <label for="emotionalEating">Do you eat when you're stressed?</label>
+                <select id="emotionalEating" required>
+                    <option value="">Select</option>
+                    <option value="always">Always</option>
+                    <option value="sometimes">Sometimes</option>
+                    <option value="never">Never</option>
+                </select><br>
+
+                <label for="portionControl">Do you stop eating when you're 80% full?</label>
+                <select id="portionControl" required>
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br>
+
+                <label for="hungerAwareness">Do you eat only when you're physically hungry?</label>
+                <select id="hungerAwareness" required>
+                    <option value="">Select</option>
+                    <option value="always">Always</option>
+                    <option value="sometimes">Sometimes</option>
+                    <option value="never">Never</option>
+                </select><br>
+
+                <button type="button" onclick="calculateMindfulEatingScore()">Submit</button>
+            </form>
+
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+		function calculateMindfulEatingScore() {
+			const age = parseInt(document.getElementById("age").value);
+			const eatingEnvironment = document.getElementById("eatingEnvironment").value;
+			const eatingSpeed = document.getElementById("eatingSpeed").value;
+			const emotionalEating = document.getElementById("emotionalEating").value;
+			const portionControl = document.getElementById("portionControl").value;
+			const hungerAwareness = document.getElementById("hungerAwareness").value;
+
+			if (!age || !eatingEnvironment || !eatingSpeed || !emotionalEating || !portionControl || !hungerAwareness) {
+				alert("Please answer all questions.");
+				return;
+			}
+
+			// Calculate score
+			let score = 0;
+
+			if (eatingEnvironment === "yes") score += 10;
+			if (eatingSpeed === "slow") score += 10;
+			if (emotionalEating === "never") score += 10;
+			if (portionControl === "yes") score += 10;
+			if (hungerAwareness === "always") score += 10;
+
+			let message;
+			if (score > 40) {
+				message = "Great job! You're a mindful eater. Keep up the good habits.";
+			} else if (score > 30) {
+				message = "Good effort, but there's room for improvement. Try to slow down and savor your meals.";
+			} else {
+				message = "You may benefit from practicing mindful eating. Focus on your eating habits to improve your well-being.";
+			}
+
+			document.getElementById("result").textContent = message;
+		}
+	</script>
+</body>
+</html>

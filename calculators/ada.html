@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurvedic Dosha Assessment</title>
+    <link rel="stylesheet" href="../styles/calculators.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <span class="hamburger-menu">&#9776;</span>
+        <ul class="navbar">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../our-approach.html">Our Approach</a></li>
+            <li><a href="../how-it-works.html">How It Works</a></li>
+            <li><a href="../calculators.html">Calculators</a></li>
+            <li><a href="../articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+	<br>
+        <h1>Ayurvedic Dosha Assessment</h1>
+        <p>Discover your dominant dosha and receive personalized lifestyle recommendations.</p>
+    </header>
+
+    <div class="content-wrapper">
+        <!-- Sidebar for Calculator List -->
+        <aside class="sidebar">
+            <h3>Calculators</h3>
+            <ul>
+                <li><a href="bmr.html">BMR & TDEE Calculator</a></li>
+                <li><a href="hrv.html">Heart Rate Variability (HRV) Assessment</a></li>
+                <li><a href="ada.html">Ayurvedic Dosha Assessment</a></li>
+                <li><a href="stress.html">Stress Level & Mental Wellness Check</a></li>
+                <li><a href="nutrition.html">Nutrition Deficiency Checker</a></li>
+                <li><a href="lung.html">Lung Capacity & Breath Control Assessment</a></li>
+                <li><a href="mindful-eating.html">Mindful Eating Quiz</a></li>
+                <li><a href="posture.html">Posture Assessment</a></li>
+                <li><a href="gut.html">Gut Health Assessment</a></li>
+				<li><a href="enviroment.html">Environmental Wellness Assessment</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+			<h2>Understanding Ayurveda Doshas</h2>
+			<p>In Ayurveda, the three doshas—Vata, Pitta, and Kapha—are biological energies found throughout the human body and mind. Each dosha influences physical characteristics, mental tendencies, and overall well-being.</p>
+
+			<table>
+				<tr>
+					<th>Vata (Air & Ether)</th>
+					<th>Pitta (Fire & Water)</th>
+					<th>Kapha (Earth & Water)</th>
+				</tr>
+				<tr>
+					<td>
+						<strong>Characteristics:</strong> Creative, quick-thinking, energetic.<br>
+						<strong>Physical Traits:</strong> Slim, dry skin, cold hands & feet.<br>
+						<strong>Imbalances:</strong> Anxiety, insomnia, digestive issues.<br>
+						<strong>Remedies:</strong> Warm foods, gentle yoga, regular routine.
+					</td>
+					<td>
+						<strong>Characteristics:</strong> Intelligent, ambitious, confident.<br>
+						<strong>Physical Traits:</strong> Medium build, warm body, oily skin.<br>
+						<strong>Imbalances:</strong> Anger, acid reflux, skin rashes.<br>
+						<strong>Remedies:</strong> Cooling foods, meditation, nature walks.
+					</td>
+					<td>
+						<strong>Characteristics:</strong> Calm, nurturing, strong.<br>
+						<strong>Physical Traits:</strong> Stocky build, smooth skin, slower metabolism.<br>
+						<strong>Imbalances:</strong> Lethargy, weight gain, congestion.<br>
+						<strong>Remedies:</strong> Stimulating activities, light foods, spices.
+					</td>
+				</tr>
+			</table>
+
+			<h3>Why Knowing Your Dosha Matters</h3>
+			<p>Understanding your dominant dosha can help you tailor your <em>diet, exercise, and lifestyle</em> to maintain balance and optimize health:</p>
+			<ul>
+				<li><strong>Vata:</strong> Focus on grounding practices and warm, nourishing foods.</li>
+				<li><strong>Pitta:</strong> Incorporate cooling foods and relaxation techniques.</li>
+				<li><strong>Kapha:</strong> Engage in stimulating exercises and lighter meals.</li>
+			</ul>
+		
+			<hr style="border: 1px solid #ccc; width: 80%; margin: 20px auto;">
+            <h2>Identify Your Dosha</h2>
+            <p>Answer the questions below to determine your dominant Ayurvedic dosha (Vata, Pitta, Kapha).</p>
+            <h5>* marked fields are mandatory</h5>
+
+            <!-- Dosha Assessment Form -->
+            <form id="dosha-form">
+                <div class="form-group">
+                    <label>* What best describes your body type?</label>
+                    <select id="question1" required>
+                        <option value="">Select an option</option>
+                        <option value="vata">Thin, light, agile</option>
+                        <option value="pitta">Moderate, muscular, warm</option>
+                        <option value="kapha">Sturdy, heavy, soft</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>* How do you typically feel during stressful situations?</label>
+                    <select id="question2" required>
+                        <option value="">Select an option</option>
+                        <option value="vata">Anxious, nervous</option>
+                        <option value="pitta">Irritated, angry</option>
+                        <option value="kapha">Calm, slow to react</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>* What type of food do you prefer?</label>
+                    <select id="question3" required>
+                        <option value="">Select an option</option>
+                        <option value="vata">Dry, crunchy, light</option>
+                        <option value="pitta">Spicy, hot, oily</option>
+                        <option value="kapha">Sweet, heavy, creamy</option>
+                    </select>
+                </div>
+				
+				<!-- Additional Physical Characteristics -->
+				<div class="form-group">
+					<label>* What best describes your skin type?</label>
+					<select id="skinType" required>
+						<option value="">Select an option</option>
+						<option value="dry">Dry</option>
+						<option value="oily">Oily</option>
+						<option value="normal">Normal</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>* How would you describe your energy levels throughout the day?</label>
+					<select id="energy">
+						<option value="">Select an option</option>
+						<option value="fluctuating">High and fluctuating</option>
+						<option value="steady">Moderate and steady</option>
+						<option value="low">Low and slow</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>* What type of climate do you prefer?</label>
+					<select id="climate">
+						<option value="">Select an option</option>
+						<option value="warm">Warm and sunny</option>
+						<option value="cool">Cool and breezy</option>
+						<option value="moderate">Moderate and mild</option>
+					</select>
+				</div>
+
+
+                <button type="button" onclick="calculateDosha()">Assess Dosha</button>
+            </form>
+
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sahaja Swasthaya. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function calculateDosha() {
+            const bodyType = document.getElementById("question1").value;
+			const stressResponse = document.getElementById("question2").value;
+			const foodPreference = document.getElementById("question3").value;
+			const skinType = document.getElementById("skinType").value;
+			const energy = document.getElementById("energy").value;
+			const climate = document.getElementById("climate").value;
+
+			if (!bodyType || !stressResponse || !foodPreference || !skinType || !energy || !climate) {
+				alert("Please fill out all the fields.");
+				return;
+			}
+
+			// Initialize counters for each dosha
+			const doshaCount = { vata: 0, pitta: 0, kapha: 0 };
+
+			// Increment dosha counters based on user inputs
+			if (bodyType === "thin") doshaCount.vata++;
+			else if (bodyType === "muscular") doshaCount.pitta++;
+			else doshaCount.kapha++;
+
+			if (stressResponse === "anxious") doshaCount.vata++;
+			else if (stressResponse === "angry") doshaCount.pitta++;
+			else doshaCount.kapha++;
+
+			if (foodPreference === "cold") doshaCount.vata++;
+			else if (foodPreference === "spicy") doshaCount.pitta++;
+			else doshaCount.kapha++;
+
+			if (skinType === "dry") doshaCount.vata++;
+			else if (skinType === "oily") doshaCount.pitta++;
+			else doshaCount.kapha++;
+
+			if (energy === "fluctuating") doshaCount.vata++;
+			else if (energy === "steady") doshaCount.pitta++;
+			else doshaCount.kapha++;
+
+			if (climate === "cold") doshaCount.vata++;
+			else if (climate === "warm") doshaCount.pitta++;
+			else doshaCount.kapha++;
+
+			// Determine dominant dosha
+			const dominantDosha = Object.keys(doshaCount).reduce((a, b) => doshaCount[a] > doshaCount[b] ? a : b);
+
+			// Display the result
+			const recommendations = {
+				vata: `
+					<h3>Vata Dosha Recommendations:</h3>
+					<h5>
+						<li><b>Diet:</b> Warm, nourishing foods like soups and stews. Avoid raw and cold foods.</li>
+						<li><b>Exercise:</b> Gentle exercises like yoga, walking, and Tai Chi.</li>
+						<li><b>Lifestyle:</b> Establish a regular daily routine, prioritize sleep, and reduce overstimulation.</li>
+						<li><b>Stress Management:</b> Practice meditation, grounding techniques, and self-massage with warm oils.</li>
+					</ul></h5>
+				`,
+				pitta: `
+					<h3>Pitta Dosha Recommendations:</h3>
+					<h5><ul>
+						<li><b>Diet:</b> Cooling, hydrating foods like cucumber, melons, and leafy greens. Avoid spicy and oily foods.</li>
+						<li><b>Exercise:</b> Moderate activities like swimming, hiking, or moon salutations in yoga.</li>
+						<li><b>Lifestyle:</b> Take breaks during the day, avoid overworking, and spend time in nature.</li>
+						<li><b>Stress Management:</b> Practice cooling breathing exercises, mindfulness, and aromatherapy with lavender or sandalwood oils.</li>
+					</ul></h5>
+				`,
+				kapha: `
+					<h3>Kapha Dosha Recommendations:</h3>
+					<h5><ul>
+						<li><b>Diet:</b> Light, spicy foods like ginger, garlic, and chili peppers to stimulate digestion.</li>
+						<li><b>Exercise:</b> High-energy activities like jogging, HIIT, or dance to increase metabolism.</li>
+						<li><b>Lifestyle:</b> Wake up early, avoid afternoon naps, and engage in stimulating activities.</li>
+						<li><b>Stress Management:</b> Practice invigorating pranayama like Kapalabhati and use stimulating essential oils like eucalyptus or rosemary.</li>
+					</ul></h5>
+				`
+			};
+
+			const resultElement = document.getElementById("result");
+			resultElement.innerHTML = `
+				<h3>Your Dominant Dosha: ${dominantDosha.toUpperCase()}</h3>
+				<p>${recommendations[dominantDosha]}</p>
+			`;
+        }
+    </script>
+</body>
+</html>

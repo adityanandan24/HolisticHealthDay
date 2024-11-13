@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gut Health Assessment</title>
+    <link rel="stylesheet" href="../styles/calculators.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <span class="hamburger-menu">&#9776;</span>
+        <ul class="navbar">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../our-approach.html">Our Approach</a></li>
+            <li><a href="../how-it-works.html">How It Works</a></li>
+            <li><a href="../calculators.html">Calculators</a></li>
+            <li><a href="../articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Gut Health Assessment</h1>
+        <p>Discover insights to improve your digestive health</p>
+    </div>
+
+    <!-- Write-up Section -->
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <h3>Related Calculators</h3>
+            <ul>
+                <li><a href="bmr.html">BMR & TDEE Calculator</a></li>
+                <li><a href="hrv.html">Heart Rate Variability (HRV) Assessment</a></li>
+                <li><a href="ada.html">Ayurvedic Dosha Assessment</a></li>
+                <li><a href="stress.html">Stress Level & Mental Wellness Check</a></li>
+                <li><a href="nutrition.html">Nutrition Deficiency Checker</a></li>
+                <li><a href="lung.html">Lung Capacity & Breath Control Assessment</a></li>
+                <li><a href="mindful-eating.html">Mindful Eating Quiz</a></li>
+                <li><a href="posture.html">Posture Assessment</a></li>
+                <li><a href="gut.html">Gut Health Assessment</a></li>
+				<li><a href="enviroment.html">Environmental Wellness Assessment</a></li>
+            </ul>
+        </aside>
+
+        <div class="main-content">
+            <!-- Explanation of Gut Health -->
+            <section>
+                <h2>Understanding Gut Health</h2>
+                <p>
+                    Gut health plays a crucial role in your overall well-being. Poor digestive health can lead to bloating, fatigue, weakened immunity, and other health issues. This assessment helps identify potential nutrient deficiencies and digestive imbalances, providing personalized recommendations to improve gut flora through dietary changes and lifestyle adjustments.
+                </p>
+                <hr>
+
+                <h3>How the Gut Health Score Works</h3>
+                <p>
+                    The Gut Health Score is determined based on your answers related to diet quality, bowel habits, energy levels, and symptoms like bloating. The assessment helps in identifying areas where improvements can be made to optimize your digestive health.
+                </p>
+                <ul>
+                    <li><strong>Optimal Gut Health:</strong> A score above 40 indicates good gut health, suggesting your diet and lifestyle are effectively supporting a healthy digestive system.</li>
+                    <li><strong>Fair Gut Health:</strong> A score between 30-40 indicates moderate gut health, with room for improvements in dietary choices.</li>
+                    <li><strong>Poor Gut Health:</strong> A score below 30 suggests a need for significant dietary changes to improve your gut health.</li>
+                </ul>
+
+                <h3>Additional Suggestions</h3>
+                <p>
+                    For a deeper analysis, consider tracking your intake of:
+                </p>
+                <ul>
+                    <li>Probiotic-rich foods like yogurt, sauerkraut, and kombucha.</li>
+                    <li>Processed foods and added sugars, which can disrupt gut flora.</li>
+                    <li>Levels of physical activity, as exercise improves gut motility.</li>
+                    <li>Stress management techniques to reduce the impact of stress on digestion.</li>
+                </ul>
+                <hr>
+            </section>
+
+            <!-- Assessment Form -->
+            <form id="gutHealthForm">
+                <h2>Gut Health Questionnaire</h2>
+
+                <label for="dietQuality">How would you rate the quality of your diet?</label>
+                <select id="dietQuality" required>
+                    <option value="">Select</option>
+                    <option value="excellent">Excellent</option>
+                    <option value="good">Good</option>
+                    <option value="average">Average</option>
+                    <option value="poor">Poor</option>
+                </select><br>
+
+                <label for="bowelHabits">How regular are your bowel movements?</label>
+                <select id="bowelHabits" required>
+                    <option value="">Select</option>
+                    <option value="regular">Regular (daily)</option>
+                    <option value="irregular">Irregular</option>
+                    <option value="constipation">Constipation</option>
+                </select><br>
+
+                <label for="bloating">Do you often experience bloating?</label>
+                <select id="bloating" required>
+                    <option value="">Select</option>
+                    <option value="never">Never</option>
+                    <option value="sometimes">Sometimes</option>
+                    <option value="often">Often</option>
+                </select><br>
+
+                <label for="energyLevel">How would you rate your energy levels?</label>
+                <select id="energyLevel" required>
+                    <option value="">Select</option>
+                    <option value="high">High</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="low">Low</option>
+                </select><br>
+
+                <label for="sleepQuality">How would you rate your sleep quality?</label>
+                <select id="sleepQuality" required>
+                    <option value="">Select</option>
+                    <option value="good">Good</option>
+                    <option value="average">Average</option>
+                    <option value="poor">Poor</option>
+                </select><br>
+
+                <button type="button" onclick="calculateGutHealthScore()">Submit</button>
+            </form>
+
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+		function calculateGutHealthScore() {
+			// Retrieve input values
+			const dietQuality = document.getElementById("dietQuality").value;
+			const bowelHabits = document.getElementById("bowelHabits").value;
+			const bloating = document.getElementById("bloating").value;
+			const energyLevel = document.getElementById("energyLevel").value;
+			const sleepQuality = document.getElementById("sleepQuality").value;
+
+			let score = 0;
+
+			// Calculate score based on answers
+			if (dietQuality === "excellent") score += 10;
+			else if (dietQuality === "good") score += 7;
+			else if (dietQuality === "average") score += 5;
+			else if (dietQuality === "poor") score += 2;
+
+			if (bowelHabits === "regular") score += 10;
+			else if (bowelHabits === "irregular") score += 5;
+			else if (bowelHabits === "constipation") score += 2;
+
+			if (bloating === "never") score += 10;
+			else if (bloating === "sometimes") score += 5;
+			else if (bloating === "often") score += 2;
+
+			if (energyLevel === "high") score += 10;
+			else if (energyLevel === "moderate") score += 5;
+			else if (energyLevel === "low") score += 2;
+
+			if (sleepQuality === "good") score += 10;
+			else if (sleepQuality === "average") score += 5;
+			else if (sleepQuality === "poor") score += 2;
+
+			// Determine Gut Health Score category
+			let message = "";
+			if (score >= 40) {
+				message = `
+					<h3>Optimal Gut Health</h3>
+					<p>Your gut health is excellent! Here are a few tips to maintain it:</p>
+					<ul>
+						<li>Continue eating a variety of fiber-rich foods like vegetables, fruits, and whole grains.</li>
+						<li>Incorporate fermented foods like yogurt, kimchi, and kefir into your diet.</li>
+						<li>Stay hydrated and maintain regular physical activity to support gut motility.</li>
+					</ul>`;
+			} else if (score >= 30) {
+				message = `
+					<h3>Moderate Gut Health</h3>
+					<p>Your gut health is fair, but there’s room for improvement:</p>
+					<ul>
+						<li>Increase your intake of probiotic-rich foods like sauerkraut and miso.</li>
+						<li>Avoid processed foods and reduce sugar consumption to improve gut flora.</li>
+						<li>Practice mindful eating and chew your food thoroughly.</li>
+						<li>Consider adding a fiber supplement to your diet if needed.</li>
+					</ul>`;
+			} else {
+				message = `
+					<h3>Poor Gut Health</h3>
+					<p>Your gut health needs significant improvement. Here are some recommendations:</p>
+					<ul>
+						<li>Focus on a whole-foods diet, eliminating processed and sugary foods.</li>
+						<li>Consult with a nutritionist about incorporating prebiotics and probiotics.</li>
+						<li>Consider trying an elimination diet to identify potential food intolerances.</li>
+						<li>Engage in stress-reducing activities like yoga or meditation.</li>
+					</ul>`;
+			}
+
+			// Display the result
+			const resultDiv = document.getElementById("result");
+			resultDiv.innerHTML = `<div class="result-box">${message}</div>`;
+			resultDiv.scrollIntoView({ behavior: "smooth" });
+		}
+
+	</script>
+</body>
+</html>

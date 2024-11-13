@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Level & Mental Wellness Check</title>
+    <link rel="stylesheet" href="../styles/calculators.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <span class="hamburger-menu">&#9776;</span>
+        <ul class="navbar">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../our-approach.html">Our Approach</a></li>
+            <li><a href="../how-it-works.html">How It Works</a></li>
+            <li><a href="../calculators.html">Calculators</a></li>
+            <li><a href="../articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header class="hero">
+        <h1>Stress Level & Mental Wellness Check</h1>
+        <p>Assess your stress levels with personalized insights and recommendations.</p>
+    </header>
+
+    <div class="content-wrapper">
+        <!-- Sidebar for Calculators -->
+        <aside class="sidebar">
+            <h3>Calculators</h3>
+            <ul>
+                <li><a href="bmr.html">BMR & TDEE Calculator</a></li>
+                <li><a href="hrv.html">Heart Rate Variability (HRV) Assessment</a></li>
+                <li><a href="ada.html">Ayurvedic Dosha Assessment</a></li>
+                <li><a href="stress.html">Stress Level & Mental Wellness Check</a></li>
+                <li><a href="nutrition.html">Nutrition Deficiency Checker</a></li>
+                <li><a href="lung.html">Lung Capacity & Breath Control Assessment</a></li>
+                <li><a href="mindful-eating.html">Mindful Eating Quiz</a></li>
+                <li><a href="posture.html">Posture Assessment</a></li>
+                <li><a href="gut.html">Gut Health Assessment</a></li>
+				<li><a href="enviroment.html">Environmental Wellness Assessment</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+			<h2>Stress Level & Mental Wellness Check</h2>
+			<p>Managing stress and maintaining mental wellness are crucial for a balanced, healthy life. This assessment helps identify your current stress levels and offers personalized recommendations to enhance your mental well-being. Regularly checking your stress levels can guide you toward better coping strategies and relaxation techniques, ultimately improving your quality of life.</p>
+
+			<h3>Why It's Important</h3>
+			<p>High stress levels can affect not just your mental health but also your physical well-being, leading to issues like insomnia, high blood pressure, and fatigue. By taking this quick assessment, you can gain insights into how your daily habits, work-life balance, and self-care practices are impacting your stress levels. The goal is to help you develop healthier habits for a more balanced mind and body.</p>
+
+			<h3>How It Works</h3>
+			<p>The assessment includes questions on sleep quality, mood, work-life balance, and physical symptoms. Based on your responses, you'll receive a personalized score along with recommendations such as relaxation techniques, mindfulness practices, and dietary adjustments to reduce stress and improve overall wellness.</p>
+
+            <h2>Check Your Stress Levels</h2>
+            <form id="stress-form">
+                <div class="form-group">
+                    <label>* How would you rate your sleep quality?</label>
+                    <select id="sleepQuality" required>
+                        <option value="">Select</option>
+                        <option value="poor">Poor</option>
+                        <option value="average">Average</option>
+                        <option value="good">Good</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>* How often do you feel overwhelmed?</label>
+                    <select id="mood" required>
+                        <option value="">Select</option>
+                        <option value="always">Always</option>
+                        <option value="sometimes">Sometimes</option>
+                        <option value="rarely">Rarely</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>* How balanced is your work-life schedule?</label>
+                    <select id="workLife" required>
+                        <option value="">Select</option>
+                        <option value="poor">Poor</option>
+                        <option value="balanced">Balanced</option>
+                        <option value="very_balanced">Very Balanced</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>* Do you experience physical symptoms like headaches or fatigue?</label>
+                    <select id="physicalSymptoms" required>
+                        <option value="">Select</option>
+                        <option value="frequently">Frequently</option>
+                        <option value="sometimes">Sometimes</option>
+                        <option value="never">Never</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>* How often do you practice mindfulness or relaxation techniques?</label>
+                    <select id="mindfulness" required>
+                        <option value="">Select</option>
+                        <option value="never">Never</option>
+                        <option value="rarely">Rarely</option>
+                        <option value="often">Often</option>
+                    </select>
+                </div>
+
+                <button type="button" onclick="calculateStress()">Calculate Stress Level</button>
+            </form>
+
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+		function calculateStress() {
+			const sleepQuality = document.getElementById("sleepQuality").value;
+			const mood = document.getElementById("mood").value;
+			const workLife = document.getElementById("workLife").value;
+			const physicalSymptoms = document.getElementById("physicalSymptoms").value;
+			const mindfulness = document.getElementById("mindfulness").value;
+
+			if (!sleepQuality || !mood || !workLife || !physicalSymptoms || !mindfulness) {
+				alert("Please fill out all fields.");
+				return;
+			}
+
+			let stressScore = 0;
+
+			// Calculate stress score based on inputs
+			stressScore += (sleepQuality === "poor") ? 3 : (sleepQuality === "average") ? 2 : 0;
+			stressScore += (mood === "always") ? 3 : (mood === "sometimes") ? 2 : 1;
+			stressScore += (workLife === "poor") ? 3 : (workLife === "balanced") ? 2 : 0;
+			stressScore += (physicalSymptoms === "frequently") ? 3 : (physicalSymptoms === "sometimes") ? 2 : 1;
+			stressScore += (mindfulness === "never") ? 3 : (mindfulness === "rarely") ? 2 : (mindfulness === "often") ? 1 : 0;
+
+			let resultText = "";
+			let recommendations = "";
+
+			// Granular recommendations based on stress score
+			if (stressScore >= 12) {
+				resultText = `<h3>Severe Stress Level</h3>`;
+				recommendations = `<h5>
+					<p><strong>Diet:</strong> Focus on anti-inflammatory foods like leafy greens, nuts, and fish rich in omega-3. Limit caffeine and sugar.</p>
+					<p><strong>Exercise:</strong> Incorporate daily yoga or tai chi to calm the nervous system. Prioritize gentle stretching and slow breathing exercises.</p>
+					<p><strong>Mindfulness:</strong> Dedicate at least 20 minutes a day to meditation, deep breathing, or guided relaxation techniques.</p>
+					<p><strong>Lifestyle:</strong> Schedule a digital detox and engage in hobbies or activities that bring joy. Seek support from friends or a therapist.</p>
+				</h5>`;
+			} else if (stressScore >= 8) {
+				resultText = `<h3>High Stress Level</h3>`;
+				recommendations = `<h5>
+					<p><strong>Diet:</strong> Include foods like dark chocolate, bananas, and green tea for stress relief. Hydrate well to improve mood and energy.</p>
+					<p><strong>Exercise:</strong> Engage in moderate physical activities like brisk walking, cycling, or swimming.</p>
+					<p><strong>Mindfulness:</strong> Try mindfulness exercises for 10 minutes daily to reduce stress levels. Use apps like Headspace or Calm.</p>
+					<p><strong>Lifestyle:</strong> Consider journaling to express thoughts and emotions. Practice gratitude exercises to focus on positive aspects of life.</p>
+				</h5>`;
+			} else if (stressScore >= 5) {
+				resultText = `<h3>Moderate Stress Level</h3>`;
+				recommendations = `<h5>
+					<p><strong>Diet:</strong> Eat a balanced diet rich in whole grains, fresh vegetables, and lean proteins to sustain energy levels.</p>
+					<p><strong>Exercise:</strong> Include at least 30 minutes of light exercise like walking or stretching 4-5 times a week.</p>
+					<p><strong>Mindfulness:</strong> Practice 5-10 minutes of deep breathing or guided meditation. Consider joining a mindfulness class.</p>
+					<p><strong>Lifestyle:</strong> Prioritize quality sleep and avoid screen time before bedtime. Engage in relaxing hobbies.</p>
+				</h5>`;
+			} else {
+				resultText = `<h3>Low Stress Level</h3>`;
+				recommendations = `<h5>
+					<p><strong>Diet:</strong> Maintain a healthy diet to keep stress levels low. Include antioxidant-rich foods like berries and leafy greens.</p>
+					<p><strong>Exercise:</strong> Continue regular exercise to support mental and physical health.</p>
+					<p><strong>Mindfulness:</strong> Keep practicing mindfulness to sustain your current well-being. Consider exploring new techniques like sound therapy.</p>
+					<p><strong>Lifestyle:</strong> Continue prioritizing self-care. Take breaks to spend time with loved ones or engage in nature walks.</p>
+				</h5>`;
+		}
+
+    // Display the result
+    document.getElementById("result").innerHTML = resultText + recommendations;
+}
+
+
+	</script>
+</body>
+</html>

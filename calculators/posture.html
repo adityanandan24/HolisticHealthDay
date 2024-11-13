@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posture Assessment</title>
+    <link rel="stylesheet" href="../styles/calculators.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <span class="hamburger-menu">&#9776;</span>
+        <ul class="navbar">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../our-approach.html">Our Approach</a></li>
+            <li><a href="../how-it-works.html">How It Works</a></li>
+            <li><a href="../calculators.html">Calculators</a></li>
+            <li><a href="../articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Posture Assessment</h1>
+        <p>Evaluate your posture and receive personalized corrective exercises.</p>
+    </section>
+
+    <div class="content-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>More Calculators</h3>
+            <ul>
+                <li><a href="bmr.html">BMR & TDEE Calculator</a></li>
+                <li><a href="hrv.html">Heart Rate Variability (HRV) Assessment</a></li>
+                <li><a href="ada.html">Ayurvedic Dosha Assessment</a></li>
+                <li><a href="stress.html">Stress Level & Mental Wellness Check</a></li>
+                <li><a href="nutrition.html">Nutrition Deficiency Checker</a></li>
+                <li><a href="lung.html">Lung Capacity & Breath Control Assessment</a></li>
+                <li><a href="mindful-eating.html">Mindful Eating Quiz</a></li>
+                <li><a href="posture.html">Posture Assessment</a></li>
+                <li><a href="gut.html">Gut Health Assessment</a></li>
+				<li><a href="enviroment.html">Environmental Wellness Assessment</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <section class="main-content">
+            <h2>Understanding the Posture Assessment</h2>
+            <p>
+                Proper posture is crucial for overall health, particularly for those who spend extended hours sitting at a desk or engaging in repetitive activities. Poor posture can result in muscle imbalances, back pain, and even affect your breathing and energy levels.
+            </p>
+            <p>
+                This assessment helps you evaluate your current posture through a series of questions. Based on your responses, you'll receive a score indicating areas that may need improvement, along with specific exercises to enhance your alignment.
+            </p>
+            
+            <h2>Posture Assessment Questionnaire</h2>
+            <p>Answer the following questions to receive personalized recommendations:</p>
+
+            <!-- Form Start -->
+            <form id="postureForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Do you experience back pain after sitting for long periods?</label>
+                        <select name="backPain" required>
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Do you tend to slouch while sitting or standing?</label>
+                        <select name="slouching" required>
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Do you feel discomfort in your shoulders or neck?</label>
+                        <select name="neckPain" required>
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>How often do you stretch or exercise?</label>
+                        <select name="stretching" required>
+                            <option value="">Select</option>
+                            <option value="daily">Daily</option>
+                            <option value="fewTimes">A few times a week</option>
+                            <option value="rarely">Rarely</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="button" onclick="calculatePosture()">Submit</button>
+            </form>
+
+            <!-- Result Section -->
+            <div id="result" class="result" style="display: none;"></div>
+        </section>
+    </div>
+
+    <!-- JavaScript for Posture Assessment -->
+    <script>
+        function calculatePosture() {
+            const form = document.getElementById('postureForm');
+            const backPain = form.backPain.value;
+            const slouching = form.slouching.value;
+            const neckPain = form.neckPain.value;
+            const stretching = form.stretching.value;
+
+            let score = 0;
+            let recommendations = [];
+
+            if (backPain === "yes") {
+                score += 2;
+                recommendations.push("Consider taking frequent breaks to stretch your back.");
+            }
+            if (slouching === "yes") {
+                score += 3;
+                recommendations.push("Focus on maintaining a straight posture while sitting and standing.");
+            }
+            if (neckPain === "yes") {
+                score += 2;
+                recommendations.push("Try neck stretches and ergonomic adjustments to reduce strain.");
+            }
+            if (stretching === "daily") {
+                score -= 1;
+            } else if (stretching === "rarely") {
+                score += 2;
+                recommendations.push("Incorporate regular stretching into your routine.");
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = `
+                <h2>Your Posture Score: ${score}</h2>
+                <p>${score > 4 ? "You may have postural imbalances. Consider corrective exercises." : "Your posture is in good condition."}</p>
+                <h4>Recommendations:</h4>
+                <ul>${recommendations.map(item => `<li>${item}</li>`).join('')}</ul>
+            `;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRV Assessment Calculator</title>
+    <link rel="stylesheet" href="../styles/calculators.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <span class="hamburger-menu">&#9776;</span>
+        <ul class="navbar">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../our-approach.html">Our Approach</a></li>
+            <li><a href="../how-it-works.html">How It Works</a></li>
+            <li><a href="../calculators.html">Calculators</a></li>
+            <li><a href="../articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+	<br>
+        <h1>Heart Rate Variability (HRV) Assessment</h1>
+        <p>Gain insights into your stress levels and recovery status.</p>
+    </header>
+
+    <div class="content-wrapper">
+        <!-- Sidebar for Calculator List -->
+        <aside class="sidebar">
+            <h3>Calculators</h3>
+            <ul>
+                <li><a href="bmr.html">BMR & TDEE Calculator</a></li>
+                <li><a href="hrv.html">Heart Rate Variability (HRV) Assessment</a></li>
+                <li><a href="ada.html">Ayurvedic Dosha Assessment</a></li>
+                <li><a href="stress.html">Stress Level & Mental Wellness Check</a></li>
+                <li><a href="nutrition.html">Nutrition Deficiency Checker</a></li>
+                <li><a href="lung.html">Lung Capacity & Breath Control Assessment</a></li>
+                <li><a href="mindful-eating.html">Mindful Eating Quiz</a></li>
+                <li><a href="posture.html">Posture Assessment</a></li>
+                <li><a href="gut.html">Gut Health Assessment</a></li>
+		<li><a href="enviroment.html">Environmental Wellness Assessment</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h2>What is Heart Rate Variability (HRV)?</h2>
+            <p>
+                HRV measures the variation in time between heartbeats. It is an indicator of autonomic nervous system health and helps you understand how your body responds to stress, exercise, and relaxation.
+            </p>
+
+            <h2>Why HRV is Important?</h2>
+            <p>
+                A higher HRV score indicates better stress resilience and recovery capabilities. This assessment is useful for athletes, yoga practitioners, and individuals focused on stress management and overall wellness.
+            </p>
+
+            <h5>* marked fields are mandatory</h5>
+            <!-- HRV Assessment Form -->
+            <form id="hrv-form">
+                <div class="form-group">
+                    <label for="restingHeartRate">* Resting Heart Rate (bpm):</label>
+                    <input type="number" id="restingHeartRate" placeholder="Enter your resting heart rate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="exerciseHeartRate">* Exercise Heart Rate (bpm):</label>
+                    <input type="number" id="exerciseHeartRate" placeholder="Enter your exercise heart rate" required>
+                </div>
+
+                <button type="button" onclick="calculateHRV()">Calculate HRV</button>
+            </form>
+
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sahaja Swasthaya. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function calculateHRV() {
+            const restingHeartRate = document.getElementById("restingHeartRate").value;
+            const exerciseHeartRate = document.getElementById("exerciseHeartRate").value;
+
+            if (!restingHeartRate || !exerciseHeartRate) {
+                alert("Please fill in all the fields.");
+                return;
+            }
+
+            const hrvScore = (100 - (exerciseHeartRate - restingHeartRate)).toFixed(2);
+            const recoveryStatus = hrvScore > 75 ? "Good" : hrvScore > 50 ? "Moderate" : "Poor";
+
+            document.getElementById("result").innerHTML = `
+                Your HRV Score: ${hrvScore} <br>
+                Recovery Status: ${recoveryStatus}
+            `;
+        }
+    </script>
+</body>
+</html>

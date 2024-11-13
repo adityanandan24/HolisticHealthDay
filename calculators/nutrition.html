@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutrition Deficiency Checker</title>
+    <link rel="stylesheet" href="../styles/calculators.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <span class="hamburger-menu">&#9776;</span>
+        <ul class="navbar">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../our-approach.html">Our Approach</a></li>
+            <li><a href="../how-it-works.html">How It Works</a></li>
+            <li><a href="../calculators.html">Calculators</a></li>
+            <li><a href="../articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header class="hero">
+		<br>
+        <h1>Nutrition Deficiency Checker</h1>
+        <p>Assess your dietary habits to identify potential nutrient deficiencies and improve your overall health.</p>
+    </header>
+
+    <!-- Content Section -->
+    <div class="content-wrapper">
+        <!-- Sidebar for Calculators -->
+        <aside class="sidebar">
+            <h3>Calculators</h3>
+            <ul>
+                <li><a href="bmr.html">BMR & TDEE Calculator</a></li>
+                <li><a href="hrv.html">Heart Rate Variability (HRV) Assessment</a></li>
+                <li><a href="ada.html">Ayurvedic Dosha Assessment</a></li>
+                <li><a href="stress.html">Stress Level & Mental Wellness Check</a></li>
+                <li><a href="nutrition.html">Nutrition Deficiency Checker</a></li>
+                <li><a href="lung.html">Lung Capacity & Breath Control Assessment</a></li>
+                <li><a href="mindful-eating.html">Mindful Eating Quiz</a></li>
+                <li><a href="posture.html">Posture Assessment</a></li>
+                <li><a href="gut.html">Gut Health Assessment</a></li>
+				<li><a href="enviroment.html">Environmental Wellness Assessment</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>Understanding Nutritional Deficiencies</h2>
+            <p>Proper nutrition is crucial for maintaining energy, mental clarity, and overall well-being. A deficiency in essential vitamins and minerals can lead to symptoms like fatigue, hair loss, and weakened immunity. Use this tool to identify potential deficiencies based on your symptoms and dietary habits.</p>
+            
+            <h3>How It Works</h3>
+            <p>Answer the questions below about your diet, lifestyle, and specific symptoms. Our tool will analyze your responses to provide personalized dietary recommendations to improve your health.</p>
+
+            <h2>Check Your Nutrient Levels</h2>
+            <form id="nutrition-form">
+            <!-- Existing Questions -->
+				<div class="form-group">
+					<label>How often do you consume leafy greens?</label>
+					<select id="vegetables">
+						<option value="">Select</option>
+						<option value="rarely">Rarely</option>
+						<option value="sometimes">Sometimes</option>
+						<option value="often">Often</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>How often do you feel fatigued?</label>
+					<select id="fatigue">
+						<option value="">Select</option>
+						<option value="frequently">Frequently</option>
+						<option value="sometimes">Sometimes</option>
+						<option value="rarely">Rarely</option>
+					</select>
+				</div>
+
+				<!-- New Questions -->
+				<div class="form-group">
+					<label>Do you experience joint pain or stiffness?</label>
+					<select id="joints">
+						<option value="">Select</option>
+						<option value="yes">Yes</option>
+						<option value="no">No</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>How would you describe your hydration level?</label>
+					<select id="hydration">
+						<option value="">Select</option>
+						<option value="low">Low</option>
+						<option value="adequate">Adequate</option>
+						<option value="high">High</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>Do you experience frequent skin breakouts or dry skin?</label>
+					<select id="skinHealth">
+						<option value="">Select</option>
+						<option value="frequently">Frequently</option>
+						<option value="sometimes">Sometimes</option>
+						<option value="rarely">Rarely</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>How often do you feel anxious or stressed?</label>
+					<select id="stress">
+						<option value="">Select</option>
+						<option value="frequently">Frequently</option>
+						<option value="sometimes">Sometimes</option>
+						<option value="rarely">Rarely</option>
+					</select>
+				</div>
+
+				<button type="button" onclick="calculateDeficiency()">Check Deficiency</button>
+			</form>
+
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function calculateDeficiency() {
+			const vegetables = document.getElementById("vegetables").value;
+			const fatigue = document.getElementById("fatigue").value;
+			const joints = document.getElementById("joints").value;
+			const hydration = document.getElementById("hydration").value;
+			const skinHealth = document.getElementById("skinHealth").value;
+			const stress = document.getElementById("stress").value;
+
+			if (!vegetables || !fatigue || !joints || !hydration || !skinHealth || !stress) {
+				alert("Please fill out all fields.");
+				return;
+			}
+
+			let deficiency = "";
+			let recommendations = "";
+
+			// Analyze responses for potential deficiencies
+			if (vegetables === "rarely" || fatigue === "frequently") {
+				deficiency += "Iron, Vitamin D, ";
+				recommendations += "<p>Include leafy greens, nuts, and fortified foods.</p>";
+			}
+			if (joints === "yes" || hydration === "low") {
+				deficiency += "Omega-3, Magnesium, ";
+				recommendations += "<p>Consider fish, chia seeds, and Epsom salt baths.</p>";
+			}
+			if (skinHealth === "frequently") {
+				deficiency += "Vitamin E, Biotin, ";
+				recommendations += "<p>Include avocados, almonds, and eggs in your diet.</p>";
+			}
+			if (stress === "frequently") {
+				deficiency += "Vitamin B Complex, Magnesium, ";
+				recommendations += "<p>Include whole grains, leafy greens, and nuts to reduce stress.</p>";
+			}
+
+			if (deficiency) {
+				document.getElementById("result").innerHTML = `<h3>Potential Deficiencies:</h3><p>${deficiency}</p>${recommendations}`;
+			} else {
+				document.getElementById("result").innerHTML = `<h3>No significant deficiencies detected.</h3><p>Maintain a balanced diet for optimal health.</p>`;
+			}
+		}
+
+    </script>
+</body>
+</html>

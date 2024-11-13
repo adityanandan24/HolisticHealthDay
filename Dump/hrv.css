@@ -1,0 +1,254 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Navigation Styles */
+nav {
+    background: linear-gradient(90deg, #004d4d, #006a93);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.1em;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hamburger Menu for Mobile (Initially Hidden on Larger Screens) */
+.hamburger-menu {
+    display: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9); /* Dark background for mobile dropdown */
+        width: 200px;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu on mobile screens */
+    }
+}
+
+a {
+    color: #005f73;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #006d77;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid #005f73;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+/* Content Layout */
+.content-wrapper {
+    display: flex;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+.main-content {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #e0f4f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+    font-size: 1.2rem;
+    color: #005f73;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    background-color: #006d77;
+    padding: 8px;
+    display: block;
+    color: white;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #004851;
+}
+
+/* Form Styling */
+form {
+    margin-top: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #005f73;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004851;
+}
+
+/* Result Section */
+.result {
+    background-color: #def2f1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Tips and Insights Section */
+.tips-section {
+    background-color: #f1f8e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 5px solid #66bb6a;
+}
+
+.tips-section h4 {
+    color: #2e7d32;
+}
+
+.tips-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
