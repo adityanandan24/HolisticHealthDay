@@ -4,21 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayurvedic Dosha Assessment</title>
-    <link rel="stylesheet" href="../styles/calculators.css">
+    <link rel="stylesheet" href="../styles/calculators - Copy.css">
 </head>
 <body>
     <!-- Navigation Menu -->
-    <nav>
-        <span class="hamburger-menu">&#9776;</span>
-        <ul class="navbar">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../services.html">Services</a></li>
-            <li><a href="../our-approach.html">Our Approach</a></li>
-            <li><a href="../how-it-works.html">How It Works</a></li>
-            <li><a href="../calculators.html">Calculators</a></li>
-            <li><a href="../articles.html">Articles</a></li>
-            <li><a href="../contact.html">Contact Us</a></li>						
-        </ul>
+    <!-- Navigation Menu -->
+    <nav class="navbar" id="navbar">
+        <span class="hamburger-menu" id="hamburger-menu">&#9776;</span>
+        <div class="nav-items" id="nav-items">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../our-approach.html">Our Approach</a></li>
+                <li><a href="../how-it-works.html">How It Works</a></li>
+                <li><a href="../articles.html">Articles</a></li>
+                <li><a href="../contact.html">Contact Us</a></li>
+                <!-- Calculators Dropdown -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Calculators ▼</a>
+                    <div class="dropdown-content">
+                        <a href="bmr.html">BMR & TDEE Calculator</a>
+                        <a href="hrv.html">Heart Rate Variability Assessment</a>
+                        <a href="ada.html">Ayurvedic Dosha Assessment</a>
+                        <a href="stress.html">Stress Level & Mental Wellness Check</a>
+                        <a href="nutrition.html">Nutrition Deficiency Checker</a>
+                        <a href="lung.html">Lung Capacity Assessment</a>
+                        <a href="mindful-eating.html">Mindful Eating Quiz</a>
+                        <a href="posture.html">Posture Assessment</a>
+                        <a href="gut.html">Gut Health Assessment</a>
+                        <a href="environment.html">Environmental Wellness Assessment</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -29,23 +48,6 @@
     </header>
 
     <div class="content-wrapper">
-        <!-- Sidebar for Calculator List -->
-        <aside class="sidebar">
-            <h3>Calculators</h3>
-            <ul>
-                <li><a href="bmr.html">BMR & TDEE Calculator</a></li>
-                <li><a href="hrv.html">Heart Rate Variability (HRV) Assessment</a></li>
-                <li><a href="ada.html">Ayurvedic Dosha Assessment</a></li>
-                <li><a href="stress.html">Stress Level & Mental Wellness Check</a></li>
-                <li><a href="nutrition.html">Nutrition Deficiency Checker</a></li>
-                <li><a href="lung.html">Lung Capacity & Breath Control Assessment</a></li>
-                <li><a href="mindful-eating.html">Mindful Eating Quiz</a></li>
-                <li><a href="posture.html">Posture Assessment</a></li>
-                <li><a href="gut.html">Gut Health Assessment</a></li>
-				<li><a href="enviroment.html">Environmental Wellness Assessment</a></li>
-            </ul>
-        </aside>
-
         <!-- Main Content Area -->
         <div class="main-content">
 			<h2>Understanding Ayurveda Doshas</h2>
@@ -93,38 +95,40 @@
             <h5>* marked fields are mandatory</h5>
 
             <!-- Dosha Assessment Form -->
-            <form id="dosha-form">
-                <div class="form-group">
-                    <label>* What best describes your body type?</label>
-                    <select id="question1" required>
-                        <option value="">Select an option</option>
-                        <option value="vata">Thin, light, agile</option>
-                        <option value="pitta">Moderate, muscular, warm</option>
-                        <option value="kapha">Sturdy, heavy, soft</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>* How do you typically feel during stressful situations?</label>
-                    <select id="question2" required>
-                        <option value="">Select an option</option>
-                        <option value="vata">Anxious, nervous</option>
-                        <option value="pitta">Irritated, angry</option>
-                        <option value="kapha">Calm, slow to react</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>* What type of food do you prefer?</label>
-                    <select id="question3" required>
-                        <option value="">Select an option</option>
-                        <option value="vata">Dry, crunchy, light</option>
-                        <option value="pitta">Spicy, hot, oily</option>
-                        <option value="kapha">Sweet, heavy, creamy</option>
-                    </select>
-                </div>
+            <form id="dosha-form" class="dosha-assessment-form">
+				<h2>Identify Your Dosha</h2>
+				<p>Answer the questions below to determine your dominant Ayurvedic dosha (Vata, Pitta, Kapha).</p>
 				
-				<!-- Additional Physical Characteristics -->
+				<div class="form-group">
+					<label>* What best describes your body type?</label>
+					<select id="question1" required>
+						<option value="">Select an option</option>
+						<option value="vata">Thin, light, agile</option>
+						<option value="pitta">Moderate, muscular, warm</option>
+						<option value="kapha">Sturdy, heavy, soft</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>* How do you typically feel during stressful situations?</label>
+					<select id="question2" required>
+						<option value="">Select an option</option>
+						<option value="vata">Anxious, nervous</option>
+						<option value="pitta">Irritated, angry</option>
+						<option value="kapha">Calm, slow to react</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>* What type of food do you prefer?</label>
+					<select id="question3" required>
+						<option value="">Select an option</option>
+						<option value="vata">Dry, crunchy, light</option>
+						<option value="pitta">Spicy, hot, oily</option>
+						<option value="kapha">Sweet, heavy, creamy</option>
+					</select>
+				</div>
+
 				<div class="form-group">
 					<label>* What best describes your skin type?</label>
 					<select id="skinType" required>
@@ -137,7 +141,7 @@
 
 				<div class="form-group">
 					<label>* How would you describe your energy levels throughout the day?</label>
-					<select id="energy">
+					<select id="energy" required>
 						<option value="">Select an option</option>
 						<option value="fluctuating">High and fluctuating</option>
 						<option value="steady">Moderate and steady</option>
@@ -147,7 +151,7 @@
 
 				<div class="form-group">
 					<label>* What type of climate do you prefer?</label>
-					<select id="climate">
+					<select id="climate" required>
 						<option value="">Select an option</option>
 						<option value="warm">Warm and sunny</option>
 						<option value="cool">Cool and breezy</option>
@@ -155,11 +159,9 @@
 					</select>
 				</div>
 
-
-                <button type="button" onclick="calculateDosha()">Assess Dosha</button>
-            </form>
-
-            <div class="result" id="result"></div>
+				<button type="button" onclick="calculateDosha()">Assess Dosha</button>
+			</form>
+			<div class="result" id="result"></div>
         </div>
     </div>
 
@@ -249,6 +251,28 @@
 				<p>${recommendations[dominantDosha]}</p>
 			`;
         }
+		
+		// New code for the responsive navigation
+		const hamburgerMenu = document.getElementById('hamburger-menu');
+		const navItems = document.getElementById('nav-items');
+		const closeBtn = document.getElementById('close-btn');
+
+		// Open the full-screen menu
+		hamburgerMenu.addEventListener('click', function() {
+			navItems.classList.add('show');
+		});
+
+		// Close the full-screen menu
+		closeBtn.addEventListener('click', function() {
+			navItems.classList.remove('show');
+		});
+
+		// Close the menu if user clicks outside
+		document.addEventListener('click', function(event) {
+			if (!navItems.contains(event.target) && event.target !== hamburgerMenu) {
+				navItems.classList.remove('show');
+			}
+		});
     </script>
 </body>
 </html>

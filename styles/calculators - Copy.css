@@ -1,0 +1,317 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Menu Styling */
+.navbar {
+    background: linear-gradient(90deg, #004d4d, #006a93);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-items {
+    display: flex; /* Ensure it's visible on desktop */
+    align-items: center;
+}
+
+.hamburger-menu {
+    display: none; /* Hide hamburger menu on desktop */
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Fullscreen Menu (for mobile) */
+.nav-items.mobile {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.nav-items.show {
+    display: flex;
+}
+
+.nav-items ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-items ul li {
+    margin: 0;
+}
+
+.nav-items ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-items ul li a:hover {
+    color: #66bb6a;
+}
+
+.close-btn {
+    display: none; /* Hide close button on desktop */
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+    .nav-items {
+        display: none; /* Hidden by default on mobile */
+    }
+    .nav-items.mobile {
+        display: flex;
+    }
+    .hamburger-menu {
+        display: block; /* Show hamburger menu on mobile */
+    }
+    .nav-items ul {
+        flex-direction: column;
+    }
+    .close-btn {
+        display: block;
+        align-self: flex-end;
+        font-size: 2em;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.close-btn {
+    align-self: flex-end;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #004d4d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    min-width: 250px; /* Adjust this value to increase the width */
+    width: auto;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #004851;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+    background-color: #006d77;
+}
+
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+a {
+    color: #005f73;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #006d77;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid #005f73;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+/* Content Layout */
+.content-wrapper {
+    display: flex;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+.main-content {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.dosha-assessment-form {
+    background: linear-gradient(135deg, #6fb1c9, #87c5b1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    color: #003d4d;
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.dosha-assessment-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #004851;
+}
+
+.dosha-assessment-form p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #005f73;
+}
+
+.dosha-assessment-form .form-group {
+    margin-bottom: 20px;
+}
+
+.dosha-assessment-form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #004d4d;
+}
+
+.dosha-assessment-form select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #e8f5f5;
+    color: #005f73;
+}
+
+.dosha-assessment-form button {
+    background-color: #008c9e;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.dosha-assessment-form button:hover {
+    background-color: #007484;
+}
+
+.result {
+    background-color: #e6f7f7;
+    color: #004d4d;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+/* Tips and Insights Section */
+.tips-section {
+    background-color: #f1f8e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 5px solid #66bb6a;
+}
+
+.tips-section h4 {
+    color: #2e7d32;
+}
+
+.tips-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
