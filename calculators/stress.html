@@ -23,6 +23,7 @@
 
     <!-- Hero Banner -->
     <header class="hero">
+		<br>
         <h1>Stress Level & Mental Wellness Check</h1>
         <p>Assess your stress levels with personalized insights and recommendations.</p>
     </header>
@@ -56,63 +57,66 @@
 			<h3>How It Works</h3>
 			<p>The assessment includes questions on sleep quality, mood, work-life balance, and physical symptoms. Based on your responses, you'll receive a personalized score along with recommendations such as relaxation techniques, mindfulness practices, and dietary adjustments to reduce stress and improve overall wellness.</p>
 
-            <h2>Check Your Stress Levels</h2>
-            <form id="stress-form">
-                <div class="form-group">
-                    <label>* How would you rate your sleep quality?</label>
-                    <select id="sleepQuality" required>
-                        <option value="">Select</option>
-                        <option value="poor">Poor</option>
-                        <option value="average">Average</option>
-                        <option value="good">Good</option>
-                    </select>
-                </div>
+			<div class="assessment-form">
+				<h2>Check Your Stress Levels</h2>
+				<p>* marked fields are mandatory</p>
+				<form id="stress-form">
+					<div class="form-group">
+						<label>* How would you rate your sleep quality?</label>
+						<select id="sleepQuality" required>
+							<option value="">Select</option>
+							<option value="poor">Poor</option>
+							<option value="average">Average</option>
+							<option value="good">Good</option>
+						</select>
+					</div>
 
-                <div class="form-group">
-                    <label>* How often do you feel overwhelmed?</label>
-                    <select id="mood" required>
-                        <option value="">Select</option>
-                        <option value="always">Always</option>
-                        <option value="sometimes">Sometimes</option>
-                        <option value="rarely">Rarely</option>
-                    </select>
-                </div>
+					<div class="form-group">
+						<label>* How often do you feel overwhelmed?</label>
+						<select id="mood" required>
+							<option value="">Select</option>
+							<option value="always">Always</option>
+							<option value="sometimes">Sometimes</option>
+							<option value="rarely">Rarely</option>
+						</select>
+					</div>
 
-                <div class="form-group">
-                    <label>* How balanced is your work-life schedule?</label>
-                    <select id="workLife" required>
-                        <option value="">Select</option>
-                        <option value="poor">Poor</option>
-                        <option value="balanced">Balanced</option>
-                        <option value="very_balanced">Very Balanced</option>
-                    </select>
-                </div>
+					<div class="form-group">
+						<label>* How balanced is your work-life schedule?</label>
+						<select id="workLife" required>
+							<option value="">Select</option>
+							<option value="poor">Poor</option>
+							<option value="balanced">Balanced</option>
+							<option value="very_balanced">Very Balanced</option>
+						</select>
+					</div>
 
-                <div class="form-group">
-                    <label>* Do you experience physical symptoms like headaches or fatigue?</label>
-                    <select id="physicalSymptoms" required>
-                        <option value="">Select</option>
-                        <option value="frequently">Frequently</option>
-                        <option value="sometimes">Sometimes</option>
-                        <option value="never">Never</option>
-                    </select>
-                </div>
+					<div class="form-group">
+						<label>* Do you experience physical symptoms like headaches or fatigue?</label>
+						<select id="physicalSymptoms" required>
+							<option value="">Select</option>
+							<option value="frequently">Frequently</option>
+							<option value="sometimes">Sometimes</option>
+							<option value="never">Never</option>
+						</select>
+					</div>
 
-                <div class="form-group">
-                    <label>* How often do you practice mindfulness or relaxation techniques?</label>
-                    <select id="mindfulness" required>
-                        <option value="">Select</option>
-                        <option value="never">Never</option>
-                        <option value="rarely">Rarely</option>
-                        <option value="often">Often</option>
-                    </select>
-                </div>
+					<div class="form-group">
+						<label>* How often do you practice mindfulness or relaxation techniques?</label>
+						<select id="mindfulness" required>
+							<option value="">Select</option>
+							<option value="never">Never</option>
+							<option value="rarely">Rarely</option>
+							<option value="often">Often</option>
+						</select>
+					</div>
 
-                <button type="button" onclick="calculateStress()">Calculate Stress Level</button>
-            </form>
+					<button type="button" onclick="calculateStress()">Calculate Stress Level</button>
+				</form>
 
-            <div class="result" id="result"></div>
-        </div>
+				<div class="result" id="result"></div>
+			</div>
+		</div>
     </div>
 
 	<footer>

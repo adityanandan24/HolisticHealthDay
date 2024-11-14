@@ -29,7 +29,7 @@
     </header>
 
     <div class="content-wrapper">
-        <!-- Sidebar for Calculator List -->
+		<!-- Sidebar for Calculator List -->
         <aside class="sidebar">
             <h3>Calculators</h3>
             <ul>
@@ -45,7 +45,7 @@
 				<li><a href="enviroment.html">Environmental Wellness Assessment</a></li>
             </ul>
         </aside>
-
+		
         <!-- Main Content Area -->
         <div class="main-content">
 			<h2>Understanding Ayurveda Doshas</h2>
@@ -79,6 +79,7 @@
 				</tr>
 			</table>
 
+			<p>  </p>
 			<h3>Why Knowing Your Dosha Matters</h3>
 			<p>Understanding your dominant dosha can help you tailor your <em>diet, exercise, and lifestyle</em> to maintain balance and optimize health:</p>
 			<ul>
@@ -87,44 +88,46 @@
 				<li><strong>Kapha:</strong> Engage in stimulating exercises and lighter meals.</li>
 			</ul>
 		
-			<hr style="border: 1px solid #ccc; width: 80%; margin: 20px auto;">
+			<!-- <hr style="border: 1px solid #ccc; width: 80%; margin: 20px auto;">
             <h2>Identify Your Dosha</h2>
-            <p>Answer the questions below to determine your dominant Ayurvedic dosha (Vata, Pitta, Kapha).</p>
-            <h5>* marked fields are mandatory</h5>
-
+            <p>* marked fields are mandatory</p>
+			-->
+			
             <!-- Dosha Assessment Form -->
-            <form id="dosha-form">
-                <div class="form-group">
-                    <label>* What best describes your body type?</label>
-                    <select id="question1" required>
-                        <option value="">Select an option</option>
-                        <option value="vata">Thin, light, agile</option>
-                        <option value="pitta">Moderate, muscular, warm</option>
-                        <option value="kapha">Sturdy, heavy, soft</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>* How do you typically feel during stressful situations?</label>
-                    <select id="question2" required>
-                        <option value="">Select an option</option>
-                        <option value="vata">Anxious, nervous</option>
-                        <option value="pitta">Irritated, angry</option>
-                        <option value="kapha">Calm, slow to react</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>* What type of food do you prefer?</label>
-                    <select id="question3" required>
-                        <option value="">Select an option</option>
-                        <option value="vata">Dry, crunchy, light</option>
-                        <option value="pitta">Spicy, hot, oily</option>
-                        <option value="kapha">Sweet, heavy, creamy</option>
-                    </select>
-                </div>
+            <form id="dosha-form" class="assessment-form">
+				<h2>Identify Your Dosha</h2>
+				<p>* marked fields are mandatory</p>
 				
-				<!-- Additional Physical Characteristics -->
+				<div class="form-group">
+					<label>* What best describes your body type?</label>
+					<select id="question1" required>
+						<option value="">Select an option</option>
+						<option value="vata">Thin, light, agile</option>
+						<option value="pitta">Moderate, muscular, warm</option>
+						<option value="kapha">Sturdy, heavy, soft</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>* How do you typically feel during stressful situations?</label>
+					<select id="question2" required>
+						<option value="">Select an option</option>
+						<option value="vata">Anxious, nervous</option>
+						<option value="pitta">Irritated, angry</option>
+						<option value="kapha">Calm, slow to react</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>* What type of food do you prefer?</label>
+					<select id="question3" required>
+						<option value="">Select an option</option>
+						<option value="vata">Dry, crunchy, light</option>
+						<option value="pitta">Spicy, hot, oily</option>
+						<option value="kapha">Sweet, heavy, creamy</option>
+					</select>
+				</div>
+
 				<div class="form-group">
 					<label>* What best describes your skin type?</label>
 					<select id="skinType" required>
@@ -137,7 +140,7 @@
 
 				<div class="form-group">
 					<label>* How would you describe your energy levels throughout the day?</label>
-					<select id="energy">
+					<select id="energy" required>
 						<option value="">Select an option</option>
 						<option value="fluctuating">High and fluctuating</option>
 						<option value="steady">Moderate and steady</option>
@@ -147,7 +150,7 @@
 
 				<div class="form-group">
 					<label>* What type of climate do you prefer?</label>
-					<select id="climate">
+					<select id="climate" required>
 						<option value="">Select an option</option>
 						<option value="warm">Warm and sunny</option>
 						<option value="cool">Cool and breezy</option>
@@ -155,11 +158,9 @@
 					</select>
 				</div>
 
-
-                <button type="button" onclick="calculateDosha()">Assess Dosha</button>
-            </form>
-
-            <div class="result" id="result"></div>
+				<button type="button" onclick="calculateDosha()">Assess Dosha</button>
+			</form>
+			<div class="result" id="result"></div>
         </div>
     </div>
 
@@ -249,6 +250,28 @@
 				<p>${recommendations[dominantDosha]}</p>
 			`;
         }
+		
+		// New code for the responsive navigation
+		const hamburgerMenu = document.getElementById('hamburger-menu');
+		const navItems = document.getElementById('nav-items');
+		const closeBtn = document.getElementById('close-btn');
+
+		// Open the full-screen menu
+		hamburgerMenu.addEventListener('click', function() {
+			navItems.classList.toggle('show');
+		});
+
+		// Close the full-screen menu
+		closeBtn.addEventListener('click', function() {
+			navItems.classList.remove('show');
+		});
+
+		// Close the menu if user clicks outside
+		document.addEventListener('click', function(event) {
+			if (!navItems.contains(event.target) && event.target !== hamburgerMenu) {
+				navItems.classList.remove('show');
+			}
+		});
     </script>
 </body>
 </html>

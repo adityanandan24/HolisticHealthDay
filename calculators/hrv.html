@@ -23,7 +23,7 @@
 
     <!-- Hero Section -->
     <header class="hero">
-	<br>
+		<br>
         <h1>Heart Rate Variability (HRV) Assessment</h1>
         <p>Gain insights into your stress levels and recovery status.</p>
     </header>
@@ -58,23 +58,26 @@
                 A higher HRV score indicates better stress resilience and recovery capabilities. This assessment is useful for athletes, yoga practitioners, and individuals focused on stress management and overall wellness.
             </p>
 
-            <h5>* marked fields are mandatory</h5>
             <!-- HRV Assessment Form -->
-            <form id="hrv-form">
-                <div class="form-group">
-                    <label for="restingHeartRate">* Resting Heart Rate (bpm):</label>
-                    <input type="number" id="restingHeartRate" placeholder="Enter your resting heart rate" required>
-                </div>
+			<div class="assessment-form">
+				<h2>Calculate Your HRV</h2>
+				<p>* marked fields are mandatory</p>
+				<form id="hrv-form">
+					<div class="form-group">
+						<label for="restingHeartRate">* Resting Heart Rate (bpm):</label>
+						<input type="number" id="restingHeartRate" placeholder="Enter your resting heart rate" required>
+					</div>
 
-                <div class="form-group">
-                    <label for="exerciseHeartRate">* Exercise Heart Rate (bpm):</label>
-                    <input type="number" id="exerciseHeartRate" placeholder="Enter your exercise heart rate" required>
-                </div>
+					<div class="form-group">
+						<label for="exerciseHeartRate">* Exercise Heart Rate (bpm):</label>
+						<input type="number" id="exerciseHeartRate" placeholder="Enter your exercise heart rate" required>
+					</div>
 
-                <button type="button" onclick="calculateHRV()">Calculate HRV</button>
-            </form>
+					<button type="button" onclick="calculateHRV()">Calculate HRV</button>
+				</form>
 
-            <div class="result" id="result"></div>
+				<div class="result" id="result"></div>
+			</div>
         </div>
     </div>
 

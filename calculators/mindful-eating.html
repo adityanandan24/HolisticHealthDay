@@ -23,6 +23,7 @@
 
     <!-- Hero Section -->
     <div class="hero">
+		<br>
         <h1>Mindful Eating Quiz</h1>
         <p>Assess your eating habits and improve your relationship with food</p>
     </div>
@@ -45,53 +46,69 @@
         </aside>
 
         <div class="main-content">
-            <form id="mindfulEatingForm">
-                <h2>Personal Information</h2>
-                <label for="age">Age:</label>
-                <input type="number" id="age" required><br>
+			<h2>What is Mindful Eating?</h2>
+            <p>
+                Mindful eating is about paying full attention to the experience of eating—savoring each bite, listening to your body's hunger and fullness signals, and eliminating distractions. By slowing down and engaging your senses, you can enjoy your meals more fully, improve digestion, and develop a healthier relationship with food.
+            </p>
+			
+			<div class="assessment-form">
+				<h2>Assess your eating habit</h2>
+				<p>* marked fields are mandatory</p>
+				
+				<form id="mindfulEatingForm">
+					<div class="form-group">
+						<label for="age">Age:</label>
+						<input type="number" id="age" required>
+					</div>
+					<div class="form-group">
+						<label for="eatingEnvironment">Do you eat in a calm environment?</label>
+						<select id="eatingEnvironment" required>
+							<option value="">Select</option>
+							<option value="yes">Yes</option>
+							<option value="no">No</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="eatingSpeed">How quickly do you eat?</label>
+						<select id="eatingSpeed" required>
+							<option value="">Select</option>
+							<option value="fast">Fast</option>
+							<option value="moderate">Moderate</option>
+							<option value="slow">Slow</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="emotionalEating">Do you eat when you're stressed?</label>
+						<select id="emotionalEating" required>
+							<option value="">Select</option>
+							<option value="always">Always</option>
+							<option value="sometimes">Sometimes</option>
+							<option value="never">Never</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="portionControl">Do you stop eating when you're 80% full?</label>
+						<select id="portionControl" required>
+							<option value="">Select</option>
+							<option value="yes">Yes</option>
+							<option value="no">No</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="hungerAwareness">Do you eat only when you're physically hungry?</label>
+						<select id="hungerAwareness" required>
+							<option value="">Select</option>
+							<option value="always">Always</option>
+							<option value="sometimes">Sometimes</option>
+							<option value="never">Never</option>
+						</select><br>
+					</div>
 
-                <label for="eatingEnvironment">Do you eat in a calm environment?</label>
-                <select id="eatingEnvironment" required>
-                    <option value="">Select</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select><br>
+					<button type="button" onclick="calculateMindfulEatingScore()">Submit</button>
+				</form>
 
-                <label for="eatingSpeed">How quickly do you eat?</label>
-                <select id="eatingSpeed" required>
-                    <option value="">Select</option>
-                    <option value="fast">Fast</option>
-                    <option value="moderate">Moderate</option>
-                    <option value="slow">Slow</option>
-                </select><br>
-
-                <label for="emotionalEating">Do you eat when you're stressed?</label>
-                <select id="emotionalEating" required>
-                    <option value="">Select</option>
-                    <option value="always">Always</option>
-                    <option value="sometimes">Sometimes</option>
-                    <option value="never">Never</option>
-                </select><br>
-
-                <label for="portionControl">Do you stop eating when you're 80% full?</label>
-                <select id="portionControl" required>
-                    <option value="">Select</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select><br>
-
-                <label for="hungerAwareness">Do you eat only when you're physically hungry?</label>
-                <select id="hungerAwareness" required>
-                    <option value="">Select</option>
-                    <option value="always">Always</option>
-                    <option value="sometimes">Sometimes</option>
-                    <option value="never">Never</option>
-                </select><br>
-
-                <button type="button" onclick="calculateMindfulEatingScore()">Submit</button>
-            </form>
-
-            <div id="result" class="result"></div>
+				<div id="result" class="result"></div>
+			</div>
         </div>
     </div>
 

@@ -54,128 +54,132 @@
                 Take this assessment to identify areas for improvement.
             </p>
 
-			<!-- Assessment Form -->
-			<form id="environmentForm">
-				<!-- Temperature & Humidity -->
-				<fieldset>
-					<legend>Temperature & Humidity</legend>
-					<label>Is your living space temperature comfortable year-round?</label>
-					<select name="temperature">
-						<option value="">Select</option>
-						<option value="comfortable">Comfortable</option>
-						<option value="variable">Variable</option>
-						<option value="uncomfortable">Uncomfortable</option>
-					</select><br>
+			<div class="assessment-form">
+				<h2>Environment Assessment Questionnaire</h2>
+				<p>* marked fields are mandatory</p>
+				<!-- Assessment Form -->
+				<form id="environmentForm">
+					<!-- Temperature & Humidity -->
+					<div class="form-group">
+						Temperature & Humidity
+						<label>Is your living space temperature comfortable year-round?</label>
+						<select name="temperature">
+							<option value="">Select</option>
+							<option value="comfortable">Comfortable</option>
+							<option value="variable">Variable</option>
+							<option value="uncomfortable">Uncomfortable</option>
+						</select>
 
-					<label>Do you use a humidifier or dehumidifier as needed?</label>
-					<select name="humidityControl">
-						<option value="">Select</option>
-						<option value="yes">Yes</option>
-						<option value="no">No</option>
-					</select>
-				</fieldset>
+						<label>Do you use a humidifier or dehumidifier as needed?</label>
+						<select name="humidityControl">
+							<option value="">Select</option>
+							<option value="yes">Yes</option>
+							<option value="no">No</option>
+						</select>
+					</div>
 
-				<!-- Cleanliness & Clutter -->
-				<fieldset>
-					<legend>Cleanliness & Clutter</legend>
-					<label>Do you regularly clean and declutter your living space?</label>
-					<select name="cleanliness">
-						<option value="">Select</option>
-						<option value="regularly">Regularly</option>
-						<option value="occasionally">Occasionally</option>
-						<option value="rarely">Rarely</option>
-					</select><br>
+					<!-- Cleanliness & Clutter -->
+					<div class="form-group">
+						Cleanliness & Clutter
+						<label>Do you regularly clean and declutter your living space?</label>
+						<select name="cleanliness">
+							<option value="">Select</option>
+							<option value="regularly">Regularly</option>
+							<option value="occasionally">Occasionally</option>
+							<option value="rarely">Rarely</option>
+						</select>
+				
+						<label>How cluttered is your workspace?</label>
+						<select name="workspaceClutter">
+							<option value="">Select</option>
+							<option value="minimal">Minimal</option>
+							<option value="moderate">Moderate</option>
+							<option value="excessive">Excessive</option>
+						</select>
+					</div>
 
-					<label>How cluttered is your workspace?</label>
-					<select name="workspaceClutter">
-						<option value="">Select</option>
-						<option value="minimal">Minimal</option>
-						<option value="moderate">Moderate</option>
-						<option value="excessive">Excessive</option>
-					</select>
-				</fieldset>
+					<!-- Greenery & Indoor Plants -->
+					<div class="form-group">
+						Greenery & Indoor Plants
+						<label>Do you have indoor plants?</label>
+						<select name="indoorPlants">
+							<option value="">Select</option>
+							<option value="yes">Yes</option>
+							<option value="no">No</option>
+						</select>
 
-				<!-- Greenery & Indoor Plants -->
-				<fieldset>
-					<legend>Greenery & Indoor Plants</legend>
-					<label>Do you have indoor plants?</label>
-					<select name="indoorPlants">
-						<option value="">Select</option>
-						<option value="yes">Yes</option>
-						<option value="no">No</option>
-					</select><br>
+						<label>How often do you spend time in green outdoor spaces?</label>
+						<select name="outdoorGreen">
+							<option value="">Select</option>
+							<option value="daily">Daily</option>
+							<option value="weekly">Weekly</option>
+							<option value="rarely">Rarely</option>
+						</select>
+					</div>
 
-					<label>How often do you spend time in green outdoor spaces?</label>
-					<select name="outdoorGreen">
-						<option value="">Select</option>
-						<option value="daily">Daily</option>
-						<option value="weekly">Weekly</option>
-						<option value="rarely">Rarely</option>
-					</select>
-				</fieldset>
+					<!-- Electromagnetic Radiation & Digital Devices -->
+					<div class="form-group">
+						Electromagnetic Radiation & Digital Devices
+						<label>Do you minimize screen time before bed?</label>
+						<select name="screenTime">
+							<option value="">Select</option>
+							<option value="always">Always</option>
+							<option value="sometimes">Sometimes</option>
+							<option value="never">Never</option>
+						</select>
 
-				<!-- Electromagnetic Radiation & Digital Devices -->
-				<fieldset>
-					<legend>Electromagnetic Radiation & Digital Devices</legend>
-					<label>Do you minimize screen time before bed?</label>
-					<select name="screenTime">
-						<option value="">Select</option>
-						<option value="always">Always</option>
-						<option value="sometimes">Sometimes</option>
-						<option value="never">Never</option>
-					</select><br>
+						<label>Do you use protective devices for electromagnetic radiation?</label>
+						<select name="emfProtection">
+							<option value="">Select</option>
+							<option value="yes">Yes</option>
+							<option value="no">No</option>
+						</select>
+					</div>
 
-					<label>Do you use protective devices for electromagnetic radiation?</label>
-					<select name="emfProtection">
-						<option value="">Select</option>
-						<option value="yes">Yes</option>
-						<option value="no">No</option>
-					</select>
-				</fieldset>
+					<!-- Water Quality & Hydration -->
+					<div class="form-group">
+						Water Quality & Hydration
+						<label>Do you drink filtered or purified water?</label>
+						<select name="filteredWater">
+							<option value="">Select</option>
+							<option value="always">Always</option>
+							<option value="sometimes">Sometimes</option>
+							<option value="never">Never</option>
+						</select>
 
-				<!-- Water Quality & Hydration -->
-				<fieldset>
-					<legend>Water Quality & Hydration</legend>
-					<label>Do you drink filtered or purified water?</label>
-					<select name="filteredWater">
-						<option value="">Select</option>
-						<option value="always">Always</option>
-						<option value="sometimes">Sometimes</option>
-						<option value="never">Never</option>
-					</select><br>
+						<label>How many glasses of water do you drink daily?</label>
+						<select name="waterIntake">
+							<option value="">Select</option>
+							<option value="8+">8+</option>
+							<option value="5-7">5-7</option>
+							<option value="less than 5">Less than 5</option>
+						</select>
+					</div>
 
-					<label>How many glasses of water do you drink daily?</label>
-					<select name="waterIntake">
-						<option value="">Select</option>
-						<option value="8+">8+</option>
-						<option value="5-7">5-7</option>
-						<option value="less than 5">Less than 5</option>
-					</select>
-				</fieldset>
+					<!-- Community & Social Environment -->
+					<div class="form-group">
+						Community & Social Environment
+						<label>How often do you interact with neighbors or community members?</label>
+						<select name="communityInteraction">
+							<option value="">Select</option>
+							<option value="frequently">Frequently</option>
+							<option value="occasionally">Occasionally</option>
+							<option value="rarely">Rarely</option>
+						</select>
 
-				<!-- Community & Social Environment -->
-				<fieldset>
-					<legend>Community & Social Environment</legend>
-					<label>How often do you interact with neighbors or community members?</label>
-					<select name="communityInteraction">
-						<option value="">Select</option>
-						<option value="frequently">Frequently</option>
-						<option value="occasionally">Occasionally</option>
-						<option value="rarely">Rarely</option>
-					</select><br>
+						<label>Do you feel safe in your neighborhood?</label>
+						<select name="neighborhoodSafety">
+							<option value="">Select</option>
+							<option value="yes">Yes</option>
+							<option value="no">No</option>
+						</select>
+					</div>
 
-					<label>Do you feel safe in your neighborhood?</label>
-					<select name="neighborhoodSafety">
-						<option value="">Select</option>
-						<option value="yes">Yes</option>
-						<option value="no">No</option>
-					</select>
-				</fieldset>
-
-				<button type="button" onclick="calculateWellness()">Get Your Score</button>
-			</form>
-			<!-- Results Section -->
-			<div id="results" class="result"></div>
+					<button type="button" onclick="calculateWellness()">Get Your Score</button>
+				</form>
+				<!-- Results Section -->
+				<div id="results" class="result"></div>
+			</div>
 		</div>
     </div>
 

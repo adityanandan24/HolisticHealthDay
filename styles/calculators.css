@@ -1,6 +1,6 @@
 /* General Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f7f9fc;
     color: #444;
     margin: 0;
@@ -35,7 +35,7 @@ nav {
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 20px;
-    font-size: 1.1em;
+    font-size: 1em;
     font-family: 'Montserrat', sans-serif;
     transition: background-color 0.3s ease;
 }
@@ -94,18 +94,19 @@ a:hover {
     background-color: #006d77;
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 40px 10px;
     border-bottom: 5px solid #005f73;
+	height: 70px;
 }
 
 .hero h1 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     margin: 0;
 }
 
 .hero p {
-    margin-top: 15px;
-    font-size: 1.1rem;
+    margin-top: 2px;
+    font-size: 1rem;
 }
 
 /* Content Layout */
@@ -125,6 +126,25 @@ a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.main-content h2 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.main-content h3 {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.main-content p {
+    margin-top: 2px;
+    font-size: 1rem;
+}
+
+.main-content ul li {
+    font-size: 0.9rem;
+}
+	
 .sidebar {
     width: 220px;
     background-color: #e0f4f1;
@@ -161,55 +181,116 @@ a:hover {
 }
 
 /* Form Styling */
-form {
-    margin-top: 20px;
+.assessment-form {
+    background: linear-gradient(135deg, #6fb1c9, #87c5b1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    color: #003d4d;
+    max-width: 500px;
+    margin: 40px auto;
+    font-family: 'Arial', sans-serif;
 }
 
-.form-row {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+.assessment-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #004851;
 }
 
+.assessment-form p {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #005f73;
+}
+
+/* Form Groups */
 .form-group {
-    flex: 1;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
+	outline: none;
 }
 
 .form-group label {
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
+	margin-top: 5px;
+    font-size: 0.9em;
 }
 
-input, select {
-    padding: 10px;
-    border: 1px solid #ccc;
+/* Standardized Input and Select Styling */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%;
+    padding: 12px; /* Uniform padding */
+    height: 45px; /* Set a fixed height */
     border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f1f8f9;
+    color: #004d4d;
+    font-size: 1em;
+    box-sizing: border-box; /* Ensure padding doesn't affect height */
 }
 
-button {
-    background-color: #005f73;
-    color: white;
-    padding: 12px;
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #008c9e;
+    box-shadow: 0 0 5px rgba(0, 140, 158, 0.3);
+}
+
+/* Radio Buttons and Checkboxes Styling */
+.radio-group label,
+.form-group input[type="checkbox"] {
+    display: flex;
+    align-items: center;
+    height: 45px; /* Match height with input fields */
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Button Styling */
+.assessment-form button {
+    background-color: #008c9e;
+    height: 45px; /* Uniform height for button */
+    padding: 0;
     border: none;
     border-radius: 5px;
+    color: white;
     cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #004851;
+.assessment-form button:hover {
+    background-color: #007484;
 }
 
-/* Result Section */
-.result {
-    background-color: #def2f1;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 25px;
-    text-align: center;
-    font-weight: bold;
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .assessment-form {
+        padding: 20px;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .assessment-form button {
+        font-size: 1em;
+    }
 }
+
 
 /* Tips and Insights Section */
 .tips-section {
@@ -227,22 +308,6 @@ button:hover {
 .tips-section ul {
     list-style-type: disc;
     padding-left: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .form-row {
-        flex-direction: column;
-    }
 }
 
 /* Footer */

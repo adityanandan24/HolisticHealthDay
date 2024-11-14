@@ -23,6 +23,7 @@
 
     <!-- Hero Section -->
     <div class="hero">
+		<br>
         <h1>Gut Health Assessment</h1>
         <p>Discover insights to improve your digestive health</p>
     </div>
@@ -52,7 +53,6 @@
                 <p>
                     Gut health plays a crucial role in your overall well-being. Poor digestive health can lead to bloating, fatigue, weakened immunity, and other health issues. This assessment helps identify potential nutrient deficiencies and digestive imbalances, providing personalized recommendations to improve gut flora through dietary changes and lifestyle adjustments.
                 </p>
-                <hr>
 
                 <h3>How the Gut Health Score Works</h3>
                 <p>
@@ -74,58 +74,64 @@
                     <li>Levels of physical activity, as exercise improves gut motility.</li>
                     <li>Stress management techniques to reduce the impact of stress on digestion.</li>
                 </ul>
-                <hr>
             </section>
+			
+			<div class="assessment-form">
+				<h2>Gut Health Questionnaire</h2>
+				<!-- Assessment Form -->
+				<form id="gutHealthForm">
+					<div class="form-group">
+						<label for="dietQuality">How would you rate the quality of your diet?</label>
+						<select id="dietQuality" required>
+							<option value="">Select</option>
+							<option value="excellent">Excellent</option>
+							<option value="good">Good</option>
+							<option value="average">Average</option>
+							<option value="poor">Poor</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="bowelHabits">How regular are your bowel movements?</label>
+						<select id="bowelHabits" required>
+							<option value="">Select</option>
+							<option value="regular">Regular (daily)</option>
+							<option value="irregular">Irregular</option>
+							<option value="constipation">Constipation</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="bloating">Do you often experience bloating?</label>
+						<select id="bloating" required>
+							<option value="">Select</option>
+							<option value="never">Never</option>
+							<option value="sometimes">Sometimes</option>
+							<option value="often">Often</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="energyLevel">How would you rate your energy levels?</label>
+						<select id="energyLevel" required>
+							<option value="">Select</option>
+							<option value="high">High</option>
+							<option value="moderate">Moderate</option>
+							<option value="low">Low</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="sleepQuality">How would you rate your sleep quality?</label>
+						<select id="sleepQuality" required>
+							<option value="">Select</option>
+							<option value="good">Good</option>
+							<option value="average">Average</option>
+							<option value="poor">Poor</option>
+						</select>
+					</div>
 
-            <!-- Assessment Form -->
-            <form id="gutHealthForm">
-                <h2>Gut Health Questionnaire</h2>
+					<button type="button" onclick="calculateGutHealthScore()">Submit</button>
+				</form>
 
-                <label for="dietQuality">How would you rate the quality of your diet?</label>
-                <select id="dietQuality" required>
-                    <option value="">Select</option>
-                    <option value="excellent">Excellent</option>
-                    <option value="good">Good</option>
-                    <option value="average">Average</option>
-                    <option value="poor">Poor</option>
-                </select><br>
-
-                <label for="bowelHabits">How regular are your bowel movements?</label>
-                <select id="bowelHabits" required>
-                    <option value="">Select</option>
-                    <option value="regular">Regular (daily)</option>
-                    <option value="irregular">Irregular</option>
-                    <option value="constipation">Constipation</option>
-                </select><br>
-
-                <label for="bloating">Do you often experience bloating?</label>
-                <select id="bloating" required>
-                    <option value="">Select</option>
-                    <option value="never">Never</option>
-                    <option value="sometimes">Sometimes</option>
-                    <option value="often">Often</option>
-                </select><br>
-
-                <label for="energyLevel">How would you rate your energy levels?</label>
-                <select id="energyLevel" required>
-                    <option value="">Select</option>
-                    <option value="high">High</option>
-                    <option value="moderate">Moderate</option>
-                    <option value="low">Low</option>
-                </select><br>
-
-                <label for="sleepQuality">How would you rate your sleep quality?</label>
-                <select id="sleepQuality" required>
-                    <option value="">Select</option>
-                    <option value="good">Good</option>
-                    <option value="average">Average</option>
-                    <option value="poor">Poor</option>
-                </select><br>
-
-                <button type="button" onclick="calculateGutHealthScore()">Submit</button>
-            </form>
-
-            <div id="result" class="result"></div>
+				<div id="result" class="result"></div>
+			</div>
         </div>
     </div>
 

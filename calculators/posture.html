@@ -23,6 +23,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
+		<br>
         <h1>Posture Assessment</h1>
         <p>Evaluate your posture and receive personalized corrective exercises.</p>
     </section>
@@ -55,55 +56,57 @@
                 This assessment helps you evaluate your current posture through a series of questions. Based on your responses, you'll receive a score indicating areas that may need improvement, along with specific exercises to enhance your alignment.
             </p>
             
-            <h2>Posture Assessment Questionnaire</h2>
-            <p>Answer the following questions to receive personalized recommendations:</p>
+			<div class="assessment-form">
+				<h2>Posture Assessment Questionnaire</h2>
+				<p>* marked fields are mandatory</p>
 
-            <!-- Form Start -->
-            <form id="postureForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Do you experience back pain after sitting for long periods?</label>
-                        <select name="backPain" required>
-                            <option value="">Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Do you tend to slouch while sitting or standing?</label>
-                        <select name="slouching" required>
-                            <option value="">Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                </div>
+				<!-- Form Start -->
+				<form id="postureForm">
+					<div class="form-row">
+						<div class="form-group">
+							<label>Do you experience back pain after sitting for long periods?</label>
+							<select name="backPain" required>
+								<option value="">Select</option>
+								<option value="yes">Yes</option>
+								<option value="no">No</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Do you tend to slouch while sitting or standing?</label>
+							<select name="slouching" required>
+								<option value="">Select</option>
+								<option value="yes">Yes</option>
+								<option value="no">No</option>
+							</select>
+						</div>
+					</div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Do you feel discomfort in your shoulders or neck?</label>
-                        <select name="neckPain" required>
-                            <option value="">Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>How often do you stretch or exercise?</label>
-                        <select name="stretching" required>
-                            <option value="">Select</option>
-                            <option value="daily">Daily</option>
-                            <option value="fewTimes">A few times a week</option>
-                            <option value="rarely">Rarely</option>
-                        </select>
-                    </div>
-                </div>
+					<div class="form-row">
+						<div class="form-group">
+							<label>Do you feel discomfort in your shoulders or neck?</label>
+							<select name="neckPain" required>
+								<option value="">Select</option>
+								<option value="yes">Yes</option>
+								<option value="no">No</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>How often do you stretch or exercise?</label>
+							<select name="stretching" required>
+								<option value="">Select</option>
+								<option value="daily">Daily</option>
+								<option value="fewTimes">A few times a week</option>
+								<option value="rarely">Rarely</option>
+							</select>
+						</div>
+					</div>
 
-                <button type="button" onclick="calculatePosture()">Submit</button>
-            </form>
+					<button type="button" onclick="calculatePosture()">Submit</button>
+				</form>
 
-            <!-- Result Section -->
-            <div id="result" class="result" style="display: none;"></div>
+				<!-- Result Section -->
+				<div id="result" class="result" style="display: none;"></div>
+			</div>
         </section>
     </div>
 
