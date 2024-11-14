@@ -82,7 +82,7 @@ body {
 }
 
 /* Mobile Styling */
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     .nav-items {
         display: none; /* Hidden by default on mobile */
     }
@@ -148,7 +148,7 @@ body {
 
 
 /* Mobile Styling */
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     .navbar ul {
         display: none;
     }
